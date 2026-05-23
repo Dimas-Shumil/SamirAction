@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/site/css/main.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header" id="header">
+      <div class="container header__container">
+        <a href="/" class="header__logo" aria-label="Samir Action">
+          <img src="/site/images/logo.PNG" alt="" />
+        </a>
+
+        <nav class="header__nav" aria-label="Основная навигация">
+          <a href="/catalog">Каталог</a>
+          <a href="/delivery">Доставка</a>
+          <a href="/contacts">Контакты</a>
+        </nav>
+
+        <a href="/cart" class="header__cart">
+          <span>Корзина</span>
+          <b>0</b>
+        </a>
+
+        <button
+          class="header__burger"
+          type="button"
+          aria-label="Открыть меню"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="header__mobile">
+        <nav class="header__mobile-nav" aria-label="Мобильная навигация">
+          <a href="/catalog">Каталог</a>
+          <a href="/delivery">Доставка</a>
+          <a href="/contacts">Контакты</a>
+          <a href="/cart">Корзина <span>0</span></a>
+          <a href="tel:89233906649">Позвонить</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ХИРО -->
+
+    <section class="hero">
+      <img
+        class="hero__background"
+        src="/site/images/hero.png"
+        alt="Samir Action"
+      />
+
+      <div class="hero__overlay"></div>
+
+      <div class="container">
+        <div class="hero__wrapper">
+          <div class="hero__content">
+            <h1 class="hero__title">
+              Экипировка <br />
+              <span
+                >для борьбы <br />
+                и тренировок</span
+              >
+            </h1>
+
+            <p class="hero__description">
+              Качество, комфорт и свобода движений для максимального результата
+              в каждой схватке.
+            </p>
+
+            <div class="hero__actions">
+              <a href="/catalog" class="hero__button hero__button--primary">
+                Перейти в каталог
+              </a>
+
+              <button
+                type="button"
+                class="hero__button hero__button--secondary"
+              >
+                Заказать в 1 клик
+              </button>
+            </div>
+
+            <ul class="hero__advantages">
+              <li class="hero__advantages-item">
+                <img src="/site/icons/iconShield.png" alt="" />
+
+                <div>
+                  <strong>Проверено спортом</strong>
+                  <span>Экипировка для побед</span>
+                </div>
+              </li>
+
+              <li class="hero__advantages-item">
+                <img src="/site/icons/iconStar.png" alt="" />
+
+                <div>
+                  <strong>Премиум материалы</strong>
+                  <span>Износостойкие ткани</span>
+                </div>
+              </li>
+
+              <li class="hero__advantages-item">
+                <img src="/site/icons/kubok.png" alt="" />
+
+                <div>
+                  <strong>Создано в России</strong>
+                  <span>Для сильных духом</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--  категории -->
+
+    <section class="categories">
+      <div class="container">
+        <div class="categories__grid">
+          <a href="/catalog?category=tshirts-shorts" class="categories__card">
+            <img
+              src="/site/images/categories/futbolkaShorty.png"
+              alt="Футболки и шорты"
+            />
+            <span class="categories__name">Футболки<br />и шорты</span>
+            <span class="categories__arrow" aria-hidden="true"></span>
+          </a>
+
+          <a
+            href="/catalog?category=wrestling-singlets"
+            class="categories__card"
+          >
+            <img src="/site/images/categories/triko.png" alt="Трико" />
+            <span class="categories__name">Трико</span>
+            <span class="categories__arrow" aria-hidden="true"></span>
+          </a>
+
+          <a href="/catalog?category=suits" class="categories__card">
+            <img src="/site/images/categories/suit.png" alt="Костюмы" />
+            <span class="categories__name">Костюмы</span>
+            <span class="categories__arrow" aria-hidden="true"></span>
+          </a>
+
+          <a href="/catalog?category=shorts" class="categories__card">
+            <img
+              src="/site/images/categories/fab48994-aa19-4919-992e-1db1d9835182.png"
+              alt="Шорты"
+            />
+            <span class="categories__name">Шорты</span>
+            <span class="categories__arrow" aria-hidden="true"></span>
+          </a>
+
+          <a href="/catalog?category=tshirts" class="categories__card">
+            <img src="/site/images/categories/tshort.png" alt="Футболки" />
+            <span class="categories__name">Футболки</span>
+            <span class="categories__arrow" aria-hidden="true"></span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <script src="/site/js/main.js"></script>
+  </body>
+</html>
