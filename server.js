@@ -70,6 +70,51 @@ app.get('/api/products/:slug', async (req, res) => {
   }
 });
 
+//  апи для модалки
+
+app.post('/api/orders', async (req, res) => {
+  try {
+    const { type, name, phone, productId, size } = req.body;
+
+    if (!name || !phone) {
+      return res.status(400).json({
+        message: 'Имя и телефон обязательны',
+      });
+    }
+
+    const ordersFilePath = path.join(dataPath, 'orders.json');
+
+    const file = await fs.readFile(ordersFilePath, 'utf8');
+    const orders = JSON.parse(file || '[]');
+
+    const newOrder = {
+      id: Date.now().toString(),
+      type: type || 'quick',
+      name,
+      phone,
+      productId: productId || null,
+      size: size || null,
+      status: 'new',
+      createdAt: new Date().toISOString(),
+    };
+
+    orders.unshift(newOrder);
+
+    await fs.writeFile(ordersFilePath, JSON.stringify(orders, null, 2));
+
+    res.status(201).json({
+      message: 'Заявка успешно создана',
+      order: newOrder,
+    });
+  } catch (error) {
+    console.error('Order create error:', error);
+
+    res.status(500).json({
+      message: 'Не удалось создать заявку',
+    });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Samir Action started: http://localhost:${PORT}`);
 });

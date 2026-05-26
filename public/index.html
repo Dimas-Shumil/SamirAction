@@ -89,7 +89,7 @@
 
               <button
                 type="button"
-                class="hero__button hero__button--secondary"
+                class="hero__button hero__button--secondary quick-order-trigger"
               >
                 Заказать в 1 клик
               </button>
@@ -234,6 +234,268 @@
         </div>
       </div>
     </section>
+
+    <!-- Комплект -->
+
+    <section class="bundle">
+      <div class="container">
+        <div class="bundle__inner">
+          <div class="bundle__content">
+            <p class="bundle__label">Комплект</p>
+
+            <h2 class="bundle__title">Собери <span>комлпект</span></h2>
+
+            <p class="bundle__text">Экономь и будь готов к победам!</p>
+
+            <button class="bundle__button" type="button" id="addBundleToCart">
+              <span>Собрать комплект</span>
+              <b>→</b>
+            </button>
+          </div>
+
+          <div class="bundle__products" id="bundleProducts"></div>
+
+          <div class="bundle__result">
+            <span>Выгода</span>
+            <strong id="bundleBenefit">0 ₽</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- как оформить заказ -->
+
+    <section class="order-steps">
+      <div class="container">
+        <div class="order-steps__inner">
+          <h2 class="order-steps__title">Как сделать заказ</h2>
+
+          <div class="order-steps__list">
+            <article class="order-steps__item">
+              <span class="order-steps__number">1</span>
+
+              <div class="order-steps__icon">
+                <img src="/site/icons/benefits/benefit-tshort.png" alt="" />
+              </div>
+
+              <h3>Выбор товара</h3>
+              <p>Выберите модель и размер в каталоге</p>
+            </article>
+
+            <span class="order-steps__arrow">→</span>
+
+            <article class="order-steps__item">
+              <span class="order-steps__number">2</span>
+
+              <div class="order-steps__icon">
+                <img src="/site/icons/benefits/benefit-setka.png" alt="" />
+              </div>
+
+              <h3>Заявка</h3>
+              <p>Добавьте в корзину и оформите заказ</p>
+            </article>
+
+            <span class="order-steps__arrow">→</span>
+
+            <article class="order-steps__item">
+              <span class="order-steps__number">3</span>
+
+              <div class="order-steps__icon">
+                <img src="/site/icons/benefits/benefit-manager.png" alt="" />
+              </div>
+
+              <h3>Подтверждение менеджером</h3>
+              <p>Мы свяжемся с вами для подтверждения заказа</p>
+            </article>
+
+            <span class="order-steps__arrow">→</span>
+
+            <article class="order-steps__item">
+              <span class="order-steps__number">4</span>
+
+              <div class="order-steps__icon">
+                <img src="/site/icons/benefits/benefir-truck.png" alt="" />
+              </div>
+
+              <h3>Доставка</h3>
+              <p>Отправим заказ по России удобной транспортной компанией</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+
+    <section class="contact-cta">
+      <div class="container">
+        <div class="contact-cta__inner">
+          <div class="contact-cta__banner">
+            <img src="/site/images/cta/bridge.jpg" alt="" />
+            <h2>
+              Остались вопросы? <br />
+              Напишите нам — мы на связи!
+            </h2>
+          </div>
+
+          <div class="contact-cta__phone">
+            <img src="/site/icons/phone.png" alt="" />
+
+            <a href="tel:+79029410871">+7 902 941-08-71</a>
+
+            <p>Ежедневно с 10:00 до 20:00</p>
+          </div>
+
+          <div class="contact-cta__info">
+            <div class="contact-cta__city">
+              <img src="/site/icons/city.png" alt="" />
+
+              <div>
+                <h3>Красноярск</h3>
+                <p>Работаем для спортсменов по всей России</p>
+              </div>
+            </div>
+
+            <a
+              href="https://wa.me/79029410871"
+              class="contact-cta__button"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/site/icons/MAX.svg" alt="" />
+              <span>Написать в MAX</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- футер -->
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__top">
+          <div class="footer__brand">
+            <a href="/" class="footer__logo">
+              <img src="/site/images/logo.PNG" alt="Samir Action" />
+            </a>
+
+            <p>Экипировка для борьбы<br />и тренировок</p>
+
+            <div class="footer__socials">
+              <a href="#" aria-label="VK"
+                ><img src="/site/icons/MAX.svg" alt=""
+              /></a>
+              <a href="#" aria-label="Telegram"
+                ><img src="/site/icons/MAX.svg" alt=""
+              /></a>
+              <a href="#" aria-label="Instagram"
+                ><img src="/site/icons/MAX.svg" alt=""
+              /></a>
+            </div>
+          </div>
+
+          <nav class="footer__column">
+            <h3>Каталог</h3>
+            <a href="/catalog?category=tshirts-shorts">Футболки и шорты</a>
+            <a href="/catalog?category=wrestling-singlets">Трико</a>
+            <a href="/catalog?category=suits">Костюмы</a>
+            <a href="/catalog?category=shorts">Шорты</a>
+            <a href="/catalog?category=tshirts">Футболки</a>
+          </nav>
+
+          <nav class="footer__column">
+            <h3>Информация</h3>
+            <a href="/delivery">Доставка</a>
+            <a href="/contacts">Контакты</a>
+            <a href="/privacy-policy">Политика конфиденциальности</a>
+          </nav>
+
+          <div class="footer__contacts">
+            <h3>Контакты</h3>
+
+            <a href="tel:+79029410871">
+              <img src="/site/icons/phone.png" alt="" />
+              <span>+7 902 941-08-71</span>
+            </a>
+
+            <p>
+              <img src="/site/icons/city.png" alt="" />
+              <span>г. Красноярск</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p>© 2026 Samir Action. Все права защищены.</p>
+
+          <div>
+            <a href="/offer">Публичная оферта</a>
+            <a href="/privacy-policy">Политика конфиденциальности</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- модалка -->
+
+    <div class="quick-modal" id="quickOrderModal" aria-hidden="true">
+      <div class="quick-modal__overlay" data-quick-close></div>
+
+      <div class="quick-modal__dialog" role="dialog" aria-modal="true">
+        <button class="quick-modal__close" type="button" data-quick-close>
+          ×
+        </button>
+
+        <p class="quick-modal__label">Быстрый заказ</p>
+
+        <h2 class="quick-modal__title">Оставьте контакты</h2>
+
+        <p class="quick-modal__text">
+          Мы свяжемся с вами, уточним размер, наличие и доставку.
+        </p>
+
+        <div class="quick-modal__product" id="quickOrderProduct"></div>
+
+        <form class="quick-modal__form" id="quickOrderForm">
+          <input type="hidden" name="productId" id="quickProductId" />
+          <input type="hidden" name="size" id="quickProductSize" />
+          <input type="hidden" name="type" value="quick" />
+
+          <label>
+            <span>Ваше имя</span>
+
+            <input
+              type="text"
+              name="name"
+              placeholder="Например, Павел"
+              required
+            />
+          </label>
+
+          <label>
+            <span>Телефон</span>
+            <input
+              type="tel"
+              name="phone"
+              placeholder="+7 ___ ___-__-__"
+              required
+            />
+          </label>
+
+          <button type="submit">Отправить заявку</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="toast" id="toast">
+      <div class="toast__icon">✓</div>
+
+      <div class="toast__content">
+        <strong>Заявка отправлена</strong>
+        <span>Наш менеджер скоро свяжется с вами</span>
+      </div>
+    </div>
 
     <script src="/site/js/main.js"></script>
   </body>

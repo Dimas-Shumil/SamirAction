@@ -10,22 +10,19 @@
     "badge": "Хит",
     "isPopular": true,
     "available": true,
+    "bundle": "training-set",
     "color": "Черный / Синий",
     "sizes": ["S", "M", "L", "XL", "XXL"],
-    "images": [
-      "/site/images/products/rashguard-alpha-1.webp",
-      "/site/images/products/rashguard-alpha-2.webp",
-      "/site/images/products/rashguard-alpha-3.webp"
-    ],
+    "images": ["/site/images/products/tshort.png"],
     "shortDescription": "Компрессионный рашгард для борьбы и тренировок.",
-    "description": "Рашгард Samir Action Alpha создан для интенсивных тренировок по борьбе, грэпплингу и MMA. Эластичная ткань плотно облегает тело, поддерживает мышцы и обеспечивает свободу движений.",
+    "description": "Рашгард Samir Action Alpha создан для интенсивных тренировок.",
     "material": "Полиэстер 85%, эластан 15%",
     "sku": "SA-ALPHA-BL"
   },
 
-    {
-    "id": "rashguard-alpha2",
-    "slug": "rashguard-samir-action-alpha2",
+  {
+    "id": "rashguard-alpha",
+    "slug": "rashguard-samir-action-alpha",
     "title": "Рашгард Samir Action Alpha",
     "category": "rashguards",
     "categoryTitle": "Рашгарды",
@@ -34,15 +31,53 @@
     "badge": "Хит",
     "isPopular": true,
     "available": true,
+    "bundle": "training-set",
     "color": "Черный / Синий",
     "sizes": ["S", "M", "L", "XL", "XXL"],
-    "images": [
-      "/site/images/products/rashguard-alpha-1.webp",
-      "/site/images/products/rashguard-alpha-2.webp",
-      "/site/images/products/rashguard-alpha-3.webp"
-    ],
+    "images": ["/site/images/products/tshort.png"],
     "shortDescription": "Компрессионный рашгард для борьбы и тренировок.",
-    "description": "Рашгард Samir Action Alpha создан для интенсивных тренировок по борьбе, грэпплингу и MMA. Эластичная ткань плотно облегает тело, поддерживает мышцы и обеспечивает свободу движений.",
+    "description": "Рашгард Samir Action Alpha создан для интенсивных тренировок.",
+    "material": "Полиэстер 85%, эластан 15%",
+    "sku": "SA-ALPHA-BL"
+  },
+
+  {
+    "id": "rashguard-alpha",
+    "slug": "rashguard-samir-action-alpha",
+    "title": "Рашгард Samir Action Alpha",
+    "category": "rashguards",
+    "categoryTitle": "Рашгарды",
+    "price": 2990,
+    "oldPrice": 3490,
+    "badge": "Хит",
+    "isPopular": true,
+    "available": true,
+    "bundle": "training-set",
+    "color": "Черный / Синий",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "images": ["/site/images/products/tshort.png"],
+    "shortDescription": "Компрессионный рашгард для борьбы и тренировок.",
+    "description": "Рашгард Samir Action Alpha создан для интенсивных тренировок.",
+    "material": "Полиэстер 85%, эластан 15%",
+    "sku": "SA-ALPHA-BL"
+  },
+   {
+    "id": "rashguard-alpha",
+    "slug": "rashguard-samir-action-alpha",
+    "title": "Рашгард Samir Action Alpha",
+    "category": "rashguards",
+    "categoryTitle": "Рашгарды",
+    "price": 2990,
+    "oldPrice": 3490,
+    "badge": "Хит",
+    "isPopular": true,
+    "available": true,
+    "bundle": "training-set",
+    "color": "Черный / Синий",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "images": ["/site/images/products/tshort.png"],
+    "shortDescription": "Компрессионный рашгард для борьбы и тренировок.",
+    "description": "Рашгард Samir Action Alpha создан для интенсивных тренировок.",
     "material": "Полиэстер 85%, эластан 15%",
     "sku": "SA-ALPHA-BL"
   }
