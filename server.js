@@ -36,7 +36,10 @@ app.get('/product/:slug', (req, res) => {
 // API
 app.get('/api/products', async (req, res) => {
   try {
-    const file = await fs.readFile(path.join(dataPath, 'products.json'), 'utf8');
+    const file = await fs.readFile(
+      path.join(dataPath, 'products.json'),
+      'utf8',
+    );
     const products = JSON.parse(file);
 
     res.json(products);
@@ -50,7 +53,10 @@ app.get('/api/products', async (req, res) => {
 
 app.get('/api/products/:slug', async (req, res) => {
   try {
-    const file = await fs.readFile(path.join(dataPath, 'products.json'), 'utf8');
+    const file = await fs.readFile(
+      path.join(dataPath, 'products.json'),
+      'utf8',
+    );
     const products = JSON.parse(file);
 
     const product = products.find((item) => item.slug === req.params.slug);
@@ -74,7 +80,7 @@ app.get('/api/products/:slug', async (req, res) => {
 
 app.post('/api/orders', async (req, res) => {
   try {
-    const { type, name, phone, productId, size } = req.body;
+    const { type, name, phone, productId, size, items, total } = req.body;
 
     if (!name || !phone) {
       return res.status(400).json({
@@ -94,6 +100,8 @@ app.post('/api/orders', async (req, res) => {
       phone,
       productId: productId || null,
       size: size || null,
+      items: Array.isArray(items) ? items : [],
+      total: Number(total) || 0,
       status: 'new',
       createdAt: new Date().toISOString(),
     };

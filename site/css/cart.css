@@ -266,7 +266,7 @@ ul {
 
 /* CART PAGE */
 .cart-page {
-  padding: 34px 0 88px;
+  padding: 34px 0px;
   background: radial-gradient(circle at top left, rgba(0, 102, 255, 0.09), transparent 34%), #03070d;
 }
 .cart-page__grid {
@@ -631,16 +631,12 @@ ul {
   cursor: pointer;
   transition: color 0.25s ease;
 }
-.cart-summary__quick::before {
-  content: "⚡";
-  margin-right: 8px;
-}
 .cart-summary__quick:hover {
   color: #ffffff;
 }
 
 .benefits {
-  padding: 72px 0;
+  padding: 40px 0;
   background: #03070d;
 }
 .benefits__inner {

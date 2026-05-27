@@ -295,7 +295,6 @@ document.addEventListener('click', (event) => {
 
 updateCartCounter();
 
-// модалка
 // модалка быстрого заказа
 
 let allProducts = [];
