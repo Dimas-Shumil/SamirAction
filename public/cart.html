@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/site/css/cart.min.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header" id="header">
+      <div class="container header__container">
+        <a href="/" class="header__logo" aria-label="Samir Action">
+          <img src="/site/images/logo.PNG" alt="" />
+        </a>
+
+        <nav class="header__nav" aria-label="Основная навигация">
+          <a href="/catalog">Каталог</a>
+          <a href="/delivery">Доставка</a>
+          <a href="/contacts">Контакты</a>
+        </nav>
+
+        <a href="/cart" class="header__cart">
+          <span>Корзина</span>
+          <b>0</b>
+        </a>
+
+        <button
+          class="header__burger"
+          type="button"
+          aria-label="Открыть меню"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="header__mobile">
+        <nav class="header__mobile-nav" aria-label="Мобильная навигация">
+          <a href="/catalog">Каталог</a>
+          <a href="/delivery">Доставка</a>
+          <a href="/contacts">Контакты</a>
+          <a href="/cart">Корзина <span>0</span></a>
+          <a href="tel:89233906649">Позвонить</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="cart-hero">
+        <img
+          class="cart-hero__bg"
+          src="/site/images/cart/hero-cart.png"
+          alt=""
+        />
+
+        <div class="container">
+          <div class="cart-hero__content">
+            <div class="cart-hero__breadcrumbs">
+              <a href="/">Главная</a>
+              <span>/</span>
+              <span>Корзина</span>
+            </div>
+
+            <h1>Корзина</h1>
+            <p>Проверьте состав заказа<br />перед оформлением</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cart-page">
+        <div class="container">
+          <div class="cart-page__grid">
+            <div class="cart-page__main">
+              <div class="cart-page__top">
+                <h2>Товары в корзине</h2>
+                <span id="cartItemsCount">0</span>
+              </div>
+
+              <div class="cart-page__items" id="cartItems"></div>
+
+              <div class="cart-delivery">
+                <img src="/site/icons/benefits/benefir-truck.png" alt="" />
+
+                <div>
+                  <strong
+                    >Добавьте товаров на 0 ₽ и получите бесплатную
+                    доставку!</strong
+                  >
+                  <p id="freeDeliveryText">
+                    До бесплатной доставки осталось 0 ₽
+                  </p>
+                </div>
+
+                <div class="cart-delivery__progress">
+                  <span id="freeDeliveryProgress"></span>
+                </div>
+              </div>
+
+              <div class="cart-page__empty" id="cartEmpty" hidden>
+                <h3>Корзина пуста</h3>
+                <p>Добавьте товары из каталога, чтобы оформить заказ.</p>
+                <a href="/catalog">Перейти в каталог</a>
+              </div>
+            </div>
+
+            <aside class="cart-summary">
+              <h2>Ваш заказ</h2>
+
+              <div class="cart-summary__row">
+                <span>Товары <b id="summaryItemsCount">(0)</b></span>
+                <strong id="cartSubtotal">0 ₽</strong>
+              </div>
+
+              <div class="cart-summary__row">
+                <span>Доставка</span>
+                <strong>от 0 ₽</strong>
+              </div>
+
+              <div class="cart-summary__total">
+                <span>Итого</span>
+                <strong id="cartTotal">0 ₽</strong>
+              </div>
+
+              <button
+                class="cart-summary__button"
+                type="button"
+                id="cartCheckoutButton"
+              >
+                <span>Оформить заказ</span>
+                <b>→</b>
+              </button>
+
+              <a href="/catalog" class="cart-summary__link"
+                >Продолжить покупки</a
+              >
+
+              <button
+                class="cart-summary__quick"
+                type="button"
+                id="cartQuickOrder"
+              >
+                Быстрый заказ в 1 клик
+              </button>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- бенифитс -->
+
+    <section class="benefits">
+      <div class="container">
+        <div class="benefits__inner">
+          <div class="benefits__item">
+            <img src="/site/icons/benefits/benefit-setka.png" alt="" />
+            <div>
+              <h3>Премиум материалы</h3>
+              <p>Прочные, дышащие ткани для интенсивных тренировок</p>
+            </div>
+          </div>
+
+          <div class="benefits__item">
+            <img src="/site/icons/benefits/benefit-tshort.png" alt="" />
+            <div>
+              <h3>Удобная посадка</h3>
+              <p>Анатомический крой и свобода движений</p>
+            </div>
+          </div>
+
+          <div class="benefits__item">
+            <img src="/site/icons/benefits/benefir-truck.png" alt="" />
+            <div>
+              <h3>Доставка по России</h3>
+              <p>Быстрая доставка в любой регион удобной ТК</p>
+            </div>
+          </div>
+
+          <div class="benefits__item">
+            <img src="/site/icons/benefits/benefit-manager.png" alt="" />
+            <div>
+              <h3>Помощь с подбором</h3>
+              <p>Подскажем размер и модель в личном сообщении</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    </main>
+
+    <!-- футер -->
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__top">
+          <div class="footer__brand">
+            <a href="/" class="footer__logo">
+              <img src="/site/images/logo.PNG" alt="Samir Action" />
+            </a>
+
+            <p>Экипировка для борьбы<br />и тренировок</p>
+
+            <div class="footer__socials">
+              <a href="#" aria-label="VK"
+                ><img src="/site/icons/MAX.svg" alt=""
+              /></a>
+              <a href="#" aria-label="Telegram"
+                ><img src="/site/icons/MAX.svg" alt=""
+              /></a>
+              <a href="#" aria-label="Instagram"
+                ><img src="/site/icons/MAX.svg" alt=""
+              /></a>
+            </div>
+          </div>
+
+          <nav class="footer__column">
+            <h3>Каталог</h3>
+            <a href="/catalog?category=tshirts-shorts">Футболки и шорты</a>
+            <a href="/catalog?category=wrestling-singlets">Трико</a>
+            <a href="/catalog?category=suits">Костюмы</a>
+            <a href="/catalog?category=shorts">Шорты</a>
+            <a href="/catalog?category=tshirts">Футболки</a>
+          </nav>
+
+          <nav class="footer__column">
+            <h3>Информация</h3>
+            <a href="/delivery">Доставка</a>
+            <a href="/contacts">Контакты</a>
+            <a href="/privacy-policy">Политика конфиденциальности</a>
+          </nav>
+
+          <div class="footer__contacts">
+            <h3>Контакты</h3>
+
+            <a href="tel:+79029410871">
+              <img src="/site/icons/phone.png" alt="" />
+              <span>+7 902 941-08-71</span>
+            </a>
+
+            <p>
+              <img src="/site/icons/city.png" alt="" />
+              <span>г. Красноярск</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p>© 2026 Samir Action. Все права защищены.</p>
+
+          <div>
+            <a href="/offer">Публичная оферта</a>
+            <a href="/privacy-policy">Политика конфиденциальности</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- модалка -->
+
+    <div class="quick-modal" id="quickOrderModal" aria-hidden="true">
+      <div class="quick-modal__overlay" data-quick-close></div>
+
+      <div class="quick-modal__dialog" role="dialog" aria-modal="true">
+        <button class="quick-modal__close" type="button" data-quick-close>
+          ×
+        </button>
+
+        <p class="quick-modal__label">Быстрый заказ</p>
+
+        <h2 class="quick-modal__title">Оставьте контакты</h2>
+
+        <p class="quick-modal__text">
+          Мы свяжемся с вами, уточним размер, наличие и доставку.
+        </p>
+
+        <div class="quick-modal__product" id="quickOrderProduct"></div>
+
+        <form class="quick-modal__form" id="quickOrderForm">
+          <input type="hidden" name="productId" id="quickProductId" />
+          <input type="hidden" name="size" id="quickProductSize" />
+          <input type="hidden" name="type" value="quick" />
+
+          <label>
+            <span>Ваше имя</span>
+
+            <input
+              type="text"
+              name="name"
+              placeholder="Например, Павел"
+              required
+            />
+          </label>
+
+          <label>
+            <span>Телефон</span>
+            <input
+              type="tel"
+              name="phone"
+              placeholder="+7 ___ ___-__-__"
+              required
+            />
+          </label>
+
+          <button type="submit">Отправить заявку</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="toast" id="toast">
+      <div class="toast__icon">✓</div>
+
+      <div class="toast__content">
+        <strong>Заявка отправлена</strong>
+        <span>Наш менеджер скоро свяжется с вами</span>
+      </div>
+    </div>
+
+    <script src="/site/js/cart.js"></script>
+  </body>
+</html>

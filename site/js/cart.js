@@ -30,196 +30,6 @@ if (header && burger) {
   });
 }
 
-// рендер на главную страницу хитов продаж
-
-async function loadPopularProducts() {
-  try {
-    const response = await fetch('/api/products');
-    const products = await response.json();
-
-    const popularProducts = products.filter(
-      (product) => product.isPopular && product.available,
-    );
-
-    renderPopularProducts(popularProducts);
-  } catch (error) {
-    console.error('Products loading error:', error);
-  }
-}
-
-function renderPopularProducts(products) {
-  const container = document.querySelector('#popularProducts');
-
-  if (!container) return;
-
-  container.innerHTML = products
-    .map(
-      (product) => `
-        <article class="product-card">
-          <a href="/product/${product.slug}" class="product-card__image">
-            <img src="${product.images[0]}" alt="${product.title}" loading="lazy" />
-          </a>
-
-          ${
-            product.badge
-              ? `<div class="product-card__badge">${product.badge}</div>`
-              : ''
-          }
-
-          <div class="product-card__content">
-            <p class="product-card__category">${product.categoryTitle}</p>
-
-            <h3 class="product-card__title">
-              <a href="/product/${product.slug}">
-                ${product.title}
-              </a>
-            </h3>
-
-            <div class="product-card__prices">
-              ${
-                product.oldPrice
-                  ? `<span>${product.oldPrice.toLocaleString('ru-RU')} ₽</span>`
-                  : ''
-              }
-
-              <strong>${product.price.toLocaleString('ru-RU')} ₽</strong>
-            </div>
-
-            ${
-              product.sizes?.length
-                ? `
-                  <div class="product-card__sizes">
-                    ${product.sizes
-                      .map(
-                        (size, index) => `
-                          <button
-                            class="product-card__size ${index === 0 ? 'active' : ''}"
-                            type="button"
-                            data-product-id="${product.id}"
-                            data-size="${size}"
-                          >
-                            ${size}
-                          </button>
-                        `,
-                      )
-                      .join('')}
-                  </div>
-                `
-                : ''
-            }
-
-            <div class="product-card__actions">
-              <button
-                class="product-card__button product-card__button--cart"
-                type="button"
-                data-product-id="${product.id}"
-              >
-                В корзину
-              </button>
-
-              <button
-                class="product-card__button product-card__button--quick"
-                type="button"
-                data-product-id="${product.id}"
-              >
-                Быстрый заказ
-              </button>
-            </div>
-          </div>
-        </article>
-      `,
-    )
-    .join('');
-}
-
-document.addEventListener('click', (event) => {
-  const sizeButton = event.target.closest('.product-card__size');
-
-  if (!sizeButton) return;
-
-  const sizesWrapper = sizeButton.closest('.product-card__sizes');
-
-  sizesWrapper.querySelectorAll('.product-card__size').forEach((button) => {
-    button.classList.remove('active');
-  });
-
-  sizeButton.classList.add('active');
-});
-
-loadPopularProducts();
-
-// рендер в секци собери комплект
-
-let bundleProducts = [];
-
-async function loadBundleProducts() {
-  try {
-    const response = await fetch('/api/products');
-    const products = await response.json();
-
-    bundleProducts = products.filter(
-      (product) => product.bundle === 'training-set' && product.available,
-    );
-
-    renderBundleProducts(bundleProducts);
-  } catch (error) {
-    console.error('Bundle loading error:', error);
-  }
-}
-
-function renderBundleProducts(products) {
-  const container = document.querySelector('#bundleProducts');
-  const benefitElement = document.querySelector('#bundleBenefit');
-
-  if (!container) return;
-
-  container.innerHTML = products
-    .map(
-      (product, index) => `
-        ${index > 0 ? '<span class="bundle__sign">+</span>' : ''}
-
-        <article class="bundle__product">
-          <img src="${product.images[0]}" alt="${product.title}" loading="lazy" />
-
-          <div>
-            <h3>${product.title}</h3>
-            <strong>${product.price.toLocaleString('ru-RU')} ₽</strong>
-          </div>
-        </article>
-      `,
-    )
-    .join('');
-
-  const oldTotal = products.reduce(
-    (total, product) => total + (product.oldPrice || product.price),
-    0,
-  );
-
-  const currentTotal = products.reduce(
-    (total, product) => total + product.price,
-    0,
-  );
-
-  const benefit = oldTotal - currentTotal;
-
-  if (benefitElement) {
-    benefitElement.textContent = `${benefit.toLocaleString('ru-RU')} ₽`;
-  }
-}
-
-document.addEventListener('click', (event) => {
-  const bundleButton = event.target.closest('#addBundleToCart');
-
-  if (!bundleButton) return;
-
-  bundleProducts.forEach((product) => {
-    const defaultSize = product.sizes?.[0] || null;
-
-    addToCart(product.id, defaultSize);
-  });
-});
-
-loadBundleProducts();
 
 // корзина
 
@@ -463,3 +273,138 @@ document
       submitButton.textContent = 'Отправить заявку';
     }
   });
+
+  // рендер товаров в корзине + цены
+
+  async function renderCartPage() {
+  const cartItemsContainer = document.querySelector('#cartItems');
+
+  if (!cartItemsContainer) return;
+
+  const cart = getCart();
+
+  const products = await getProducts();
+
+  if (!cart.length) {
+    document.querySelector('#cartEmpty')?.removeAttribute('hidden');
+
+    cartItemsContainer.innerHTML = '';
+
+    return;
+  }
+
+  document.querySelector('#cartEmpty')?.setAttribute('hidden', true);
+
+  const cartProducts = cart.map((cartItem) => {
+    const product = products.find((item) => item.id === cartItem.id);
+
+    return {
+      ...product,
+      size: cartItem.size,
+      quantity: cartItem.quantity,
+    };
+  });
+
+  cartItemsContainer.innerHTML = cartProducts
+    .map(
+      (product) => `
+        <article class="cart-item">
+          <a href="/product/${product.slug}" class="cart-item__image">
+            <img src="${product.images[0]}" alt="${product.title}" />
+          </a>
+
+          <div class="cart-item__content">
+            <div class="cart-item__info">
+              <h3>${product.title}</h3>
+
+              <p>
+                Цвет:
+                <span>${product.color}</span>
+              </p>
+
+              ${
+                product.size
+                  ? `
+                    <p>
+                      Размер:
+                      <span>${product.size}</span>
+                    </p>
+                  `
+                  : ''
+              }
+            </div>
+
+            <strong class="cart-item__price">
+              ${product.price.toLocaleString('ru-RU')} ₽
+            </strong>
+
+            <div class="cart-item__quantity">
+              <button
+                type="button"
+                class="cart-item__quantity-button"
+                data-action="decrease"
+                data-product-id="${product.id}"
+                data-size="${product.size || ''}"
+              >
+                −
+              </button>
+
+              <span>${product.quantity}</span>
+
+              <button
+                type="button"
+                class="cart-item__quantity-button"
+                data-action="increase"
+                data-product-id="${product.id}"
+                data-size="${product.size || ''}"
+              >
+                +
+              </button>
+            </div>
+
+            <strong class="cart-item__total">
+              ${(product.price * product.quantity).toLocaleString('ru-RU')} ₽
+            </strong>
+
+            <button
+              class="cart-item__remove"
+              type="button"
+              data-action="remove"
+              data-product-id="${product.id}"
+              data-size="${product.size || ''}"
+            >
+              ×
+            </button>
+          </div>
+        </article>
+      `,
+    )
+    .join('');
+
+  updateCartSummary(cartProducts);
+}
+
+function updateCartSummary(products) {
+  const total = products.reduce(
+    (sum, product) => sum + product.price * product.quantity,
+    0,
+  );
+
+  const quantity = products.reduce(
+    (sum, product) => sum + product.quantity,
+    0,
+  );
+
+  document.querySelector('#cartSubtotal').textContent =
+    `${total.toLocaleString('ru-RU')} ₽`;
+
+  document.querySelector('#cartTotal').textContent =
+    `${total.toLocaleString('ru-RU')} ₽`;
+
+  document.querySelector('#cartItemsCount').textContent = quantity;
+
+  document.querySelector('#summaryItemsCount').textContent =
+    `(${quantity})`;
+}
+
+renderCartPage();
