@@ -1,7 +1,7 @@
 @import './main.scss';
 
 .product-page {
-  padding: 110px 0 80px;
+  padding: 110px 0 72px;
   background: #050b12;
   min-height: 100vh;
 
@@ -138,7 +138,7 @@
 
   &__badge {
     display: inline-flex;
-    margin-bottom: 20px;
+    margin: 20px 0;
     padding: 7px 12px;
     border-radius: 6px;
     background: #0066ff;
@@ -168,7 +168,6 @@
 
   &__description {
     max-width: 520px;
-    margin: 0 0 22px;
     color: rgba(255, 255, 255, 0.66);
     line-height: 1.5;
   }
@@ -308,7 +307,7 @@
       min-width: 34px;
       width: 34px;
       height: 34px;
-      
+
       img {
         width: 100%;
         height: 100%;
@@ -470,7 +469,7 @@
     display: flex;
     align-items: baseline;
     gap: 14px;
-    margin-top: 28px;
+    // margin-top: 28px;
 
     span {
       color: rgba(255, 255, 255, 0.42);
