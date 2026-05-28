@@ -37,9 +37,9 @@ async function loadPopularProducts() {
     const response = await fetch('/api/products');
     const products = await response.json();
 
-    const popularProducts = products.filter(
-      (product) => product.isPopular && product.available,
-    );
+    const popularProducts = products
+      .filter((product) => product.badge === 'Хит' && product.available)
+      .slice(0, 4);
 
     renderPopularProducts(popularProducts);
   } catch (error) {
@@ -234,20 +234,15 @@ function saveCart(cart) {
 function updateCartCounter() {
   const cart = getCart();
 
-  const totalQuantity = cart.reduce(
-    (total, item) => total + item.quantity,
-    0,
-  );
+  const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
 
   document.querySelectorAll('.header__cart b').forEach((counter) => {
     counter.textContent = totalQuantity;
   });
 
-  document
-    .querySelectorAll('.header__mobile-nav a span')
-    .forEach((counter) => {
-      counter.textContent = totalQuantity;
-    });
+  document.querySelectorAll('.header__mobile-nav a span').forEach((counter) => {
+    counter.textContent = totalQuantity;
+  });
 }
 
 function addToCart(productId, size = null) {
@@ -270,11 +265,7 @@ function addToCart(productId, size = null) {
   saveCart(cart);
   updateCartCounter();
 
-  showToast(
-    'Товар добавлен',
-    'Товар успешно добавлен в корзину',
-    'success',
-  );
+  showToast('Товар добавлен', 'Товар успешно добавлен в корзину', 'success');
 }
 
 document.addEventListener('click', (event) => {
@@ -452,11 +443,7 @@ document
         'success',
       );
     } catch (error) {
-      showToast(
-        'Заявка не отправлена',
-        'Попробуйте еще раз позже',
-        'error',
-      );
+      showToast('Заявка не отправлена', 'Попробуйте еще раз позже', 'error');
     } finally {
       submitButton.disabled = false;
       submitButton.textContent = 'Отправить заявку';

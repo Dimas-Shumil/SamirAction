@@ -101,6 +101,8 @@ updateCartCounter();
 let allProducts = [];
 let orderMode = 'quick';
 
+const FREE_DELIVERY_LIMIT = 6000;
+
 async function getProducts() {
   if (allProducts.length) return allProducts;
 
@@ -108,6 +110,39 @@ async function getProducts() {
   allProducts = await response.json();
 
   return allProducts;
+}
+
+function updateFreeDelivery(total) {
+  const deliveryBlock = document.querySelector('.cart-delivery');
+  const deliveryTitle = deliveryBlock?.querySelector('strong');
+  const deliveryText = document.querySelector('#freeDeliveryText');
+  const deliveryProgress = document.querySelector('#freeDeliveryProgress');
+
+  if (!deliveryBlock || !deliveryTitle || !deliveryText || !deliveryProgress) {
+    return;
+  }
+
+  const remaining = Math.max(FREE_DELIVERY_LIMIT - total, 0);
+  const progressPercent = Math.min((total / FREE_DELIVERY_LIMIT) * 100, 100);
+
+  deliveryProgress.style.width = `${progressPercent}%`;
+
+  if (remaining > 0) {
+    deliveryTitle.textContent = `Добавьте товаров на ${remaining.toLocaleString(
+      'ru-RU',
+    )} ₽ и получите бесплатную доставку!`;
+
+    deliveryText.textContent = `До бесплатной доставки осталось ${remaining.toLocaleString(
+      'ru-RU',
+    )} ₽`;
+
+    return;
+  }
+
+  deliveryTitle.textContent = 'Бесплатная доставка доступна для этого заказа!';
+  deliveryText.textContent = `Сумма заказа от ${FREE_DELIVERY_LIMIT.toLocaleString(
+    'ru-RU',
+  )} ₽ — доставка бесплатно`;
 }
 
 function showToast(title, text, type = 'success') {
@@ -360,25 +395,44 @@ async function renderCartPage() {
 
   const products = await getProducts();
 
-  if (!cart.length) {
+  const cartProducts = cart
+    .map((cartItem) => {
+      const product = products.find((item) => item.id === cartItem.id);
+
+      if (!product) {
+        return null;
+      }
+
+      return {
+        ...product,
+        size: cartItem.size,
+        quantity: cartItem.quantity,
+      };
+    })
+    .filter(Boolean);
+
+  if (cart.length !== cartProducts.length) {
+    const cleanedCart = cartProducts.map((product) => ({
+      id: product.id,
+      size: product.size,
+      quantity: product.quantity,
+    }));
+
+    saveCart(cleanedCart);
+    updateCartCounter();
+  }
+
+  if (!cartProducts.length) {
     document.querySelector('#cartEmpty')?.removeAttribute('hidden');
 
     cartItemsContainer.innerHTML = '';
+
+    updateCartSummary([]);
 
     return;
   }
 
   document.querySelector('#cartEmpty')?.setAttribute('hidden', true);
-
-  const cartProducts = cart.map((cartItem) => {
-    const product = products.find((item) => item.id === cartItem.id);
-
-    return {
-      ...product,
-      size: cartItem.size,
-      quantity: cartItem.quantity,
-    };
-  });
 
   cartItemsContainer.innerHTML = cartProducts
     .map(
@@ -476,6 +530,8 @@ function updateCartSummary(products) {
   document.querySelector('#cartItemsCount').textContent = quantity;
 
   document.querySelector('#summaryItemsCount').textContent = `(${quantity})`;
+
+  updateFreeDelivery(total);
 }
 
 document.addEventListener('click', (event) => {

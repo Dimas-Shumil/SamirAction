@@ -1,7 +1,7 @@
 {
-  "name": "samir-action",
+  "name": "samir-wresling",
   "version": "1.0.0",
-  "description": "Samir Action ecommerce website",
+  "description": "Samir Wrestling ecommerce website",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

@@ -1,10 +1,10 @@
 [
   {
-    "id": "rashguard-alpha",
-    "slug": "rashguard-samir-action-alpha",
-    "title": "Рашгард Samir Action Alpha",
-    "category": "rashguards",
-    "categoryTitle": "Рашгарды",
+    "id": "t-short-alpha",
+    "slug": "t-short-samir-wrestling-alpha",
+    "title": "Футболка SAMIR WRESTLING Alpha",
+    "category": "t-shorts",
+    "categoryTitle": "Футболки",
     "price": 2990,
     "oldPrice": 3490,
     "badge": "Хит",
@@ -13,16 +13,21 @@
     "bundle": "training-set",
     "color": "Черный / Синий",
     "sizes": ["S", "M", "L", "XL", "XXL"],
-    "images": ["/site/images/products/tshort.png"],
-    "shortDescription": "Компрессионный рашгард для борьбы и тренировок.",
-    "description": "Рашгард Samir Action Alpha создан для интенсивных тренировок.",
+    "images": [
+      "/site/images/products/t-shortSWalpha1/tshort.png",
+      "/site/images/products/t-shortSWalpha1/back.png",
+      "/site/images/products/t-shortSWalpha1/tail.png",
+      "/site/images/products/t-shortSWalpha1/detail.png"
+    ],
+    "shortDescription": "Футболка для борьбы и тренировок.",
+    "description": "Футболка SAMIR WRESTLING Alpha создан для интенсивных тренировок по борьбе, грэпплингу и ММА. Эластичная ткань плотно облегает тело, поддерживает мышцы и сохраняет свободу движений.",
     "material": "Полиэстер 85%, эластан 15%",
-    "sku": "SA-ALPHA-BL"
+    "sku": "SW-RASH-ALPHA-BL"
   },
   {
     "id": "wrestling-singlet-alpha",
-    "slug": "wrestling-singlet-samir-action-alpha",
-    "title": "Трико борцовское Samir Action Alpha",
+    "slug": "wrestling-singlet-samir-wrestling-alpha",
+    "title": "Трико борцовское SAMIR WRESTLING Alpha",
     "category": "wrestling-singlets",
     "categoryTitle": "Трико",
     "price": 3990,
@@ -35,14 +40,14 @@
     "sizes": ["S", "M", "L", "XL", "XXL"],
     "images": ["/site/images/products/triko.png"],
     "shortDescription": "Борцовское трико для тренировок и соревнований.",
-    "description": "Борцовское трико Samir Action Alpha создано для плотной посадки, свободы движений и уверенной работы на ковре. Подходит для тренировок и соревновательных схваток.",
+    "description": "Борцовское трико SAMIR WRESTLING Alpha создано для плотной посадки, свободы движений и уверенной работы на ковре. Подходит для тренировок и соревновательных схваток.",
     "material": "Полиэстер 85%, эластан 15%",
-    "sku": "SA-TRIKO-ALPHA-BL"
+    "sku": "SW-TRIKO-ALPHA-BL"
   },
   {
     "id": "sport-suit-elite",
-    "slug": "sport-suit-samir-action-elite",
-    "title": "Костюм спортивный Samir Action Elite",
+    "slug": "sport-suit-samir-wrestling-elite",
+    "title": "Костюм спортивный SAMIR WRESTLING Elite",
     "category": "suits",
     "categoryTitle": "Костюмы",
     "price": 6490,
@@ -55,28 +60,28 @@
     "sizes": ["S", "M", "L", "XL", "XXL"],
     "images": ["/site/images/products/suit.png"],
     "shortDescription": "Спортивный костюм для тренировок, дороги и повседневной носки.",
-    "description": "Спортивный костюм Samir Action Elite выполнен в темном premium combat стиле. Подходит для разминки, поездок на соревнования, тренировок и повседневного использования.",
+    "description": "Спортивный костюм SAMIR WRESTLING Elite выполнен в темном premium combat стиле. Подходит для разминки, поездок на соревнования, тренировок и повседневного использования.",
     "material": "Полиэстер 80%, хлопок 15%, эластан 5%",
-    "sku": "SA-SUIT-ELITE-BL"
+    "sku": "SW-SUIT-ELITE-BL"
   },
   {
-    "id": "rashguard-alpha3",
-    "slug": "rashguard-samir-action-alpha",
-    "title": "Рашгард Samir Action Alpha",
+    "id": "rashguard-pro",
+    "slug": "rashguard-samir-wrestling-pro",
+    "title": "Рашгард SAMIR WRESTLING Pro",
     "category": "rashguards",
     "categoryTitle": "Рашгарды",
-    "price": 2990,
-    "oldPrice": 3490,
+    "price": 3190,
+    "oldPrice": 3690,
     "badge": "Хит",
     "isPopular": true,
     "available": true,
-    "bundle": "training-set",
+    "bundle": null,
     "color": "Черный / Синий",
     "sizes": ["S", "M", "L", "XL", "XXL"],
     "images": ["/site/images/products/tshort.png"],
-    "shortDescription": "Компрессионный рашгард для борьбы и тренировок.",
-    "description": "Рашгард Samir Action Alpha создан для интенсивных тренировок.",
+    "shortDescription": "Компрессионный рашгард для борьбы, грэпплинга и тренировок.",
+    "description": "Рашгард SAMIR WRESTLING Pro создан для интенсивных нагрузок, плотной посадки и максимальной свободы движений. Хорошо подходит для борьбы, грэпплинга, ММА и функциональных тренировок.",
     "material": "Полиэстер 85%, эластан 15%",
-    "sku": "SA-ALPHA-BL"
+    "sku": "SW-RASH-PRO-BL"
   }
 ]

@@ -78,9 +78,102 @@ app.get('/api/products/:slug', async (req, res) => {
 
 //  апи для модалки
 
+function normalizeString(value, maxLength = 120) {
+  return String(value || '')
+    .trim()
+    .slice(0, maxLength);
+}
+
+function normalizeQuantity(value) {
+  const quantity = Number.parseInt(value, 10);
+
+  if (!Number.isFinite(quantity) || quantity < 1) {
+    return 1;
+  }
+
+  return Math.min(quantity, 99);
+}
+
+async function readJsonFile(fileName, fallback = []) {
+  try {
+    const file = await fs.readFile(path.join(dataPath, fileName), 'utf8');
+
+    return JSON.parse(file || JSON.stringify(fallback));
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      return fallback;
+    }
+
+    throw error;
+  }
+}
+
+function buildOrderItems(body, products) {
+  const requestItems =
+    Array.isArray(body.items) && body.items.length
+      ? body.items
+      : body.productId
+        ? [
+            {
+              id: body.productId,
+              size: body.size,
+              quantity: body.quantity || 1,
+            },
+          ]
+        : [];
+
+  const preparedItems = [];
+
+  requestItems.forEach((item) => {
+    const productId = normalizeString(item.id || item.productId, 100);
+    const product = products.find((productItem) => {
+      return productItem.id === productId && productItem.available;
+    });
+
+    if (!product) return;
+
+    const size = item.size ? normalizeString(item.size, 20) : null;
+
+    if (product.sizes?.length && size && !product.sizes.includes(size)) {
+      return;
+    }
+
+    const quantity = normalizeQuantity(item.quantity);
+
+    preparedItems.push({
+      id: product.id,
+      title: product.title,
+      size,
+      quantity,
+      price: product.price,
+      total: product.price * quantity,
+    });
+  });
+
+  const mergedItems = [];
+
+  preparedItems.forEach((item) => {
+    const existingItem = mergedItems.find((mergedItem) => {
+      return mergedItem.id === item.id && mergedItem.size === item.size;
+    });
+
+    if (existingItem) {
+      existingItem.quantity += item.quantity;
+      existingItem.total = existingItem.price * existingItem.quantity;
+      return;
+    }
+
+    mergedItems.push(item);
+  });
+
+  return mergedItems;
+}
+
 app.post('/api/orders', async (req, res) => {
   try {
-    const { type, name, phone, productId, size, items, total } = req.body;
+    const name = normalizeString(req.body.name, 80);
+    const phone = normalizeString(req.body.phone, 40);
+    const type = req.body.type === 'cart' ? 'cart' : 'quick';
 
     if (!name || !phone) {
       return res.status(400).json({
@@ -88,20 +181,35 @@ app.post('/api/orders', async (req, res) => {
       });
     }
 
-    const ordersFilePath = path.join(dataPath, 'orders.json');
+    const products = await readJsonFile('products.json', []);
+    const items = buildOrderItems(req.body, products);
 
-    const file = await fs.readFile(ordersFilePath, 'utf8');
-    const orders = JSON.parse(file || '[]');
+    if (type === 'cart' && !items.length) {
+      return res.status(400).json({
+        message: 'Корзина пуста или товары не найдены',
+      });
+    }
+
+    if (req.body.productId && !items.length) {
+      return res.status(400).json({
+        message: 'Товар не найден или недоступен',
+      });
+    }
+
+    const total = items.reduce((sum, item) => sum + item.total, 0);
+
+    const ordersFilePath = path.join(dataPath, 'orders.json');
+    const orders = await readJsonFile('orders.json', []);
 
     const newOrder = {
       id: Date.now().toString(),
-      type: type || 'quick',
+      type,
       name,
       phone,
-      productId: productId || null,
-      size: size || null,
-      items: Array.isArray(items) ? items : [],
-      total: Number(total) || 0,
+      productId: type === 'quick' ? items[0]?.id || null : null,
+      size: type === 'quick' ? items[0]?.size || null : null,
+      items,
+      total,
       status: 'new',
       createdAt: new Date().toISOString(),
     };
@@ -124,5 +232,5 @@ app.post('/api/orders', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Samir Action started: http://localhost:${PORT}`);
+  console.log(`Samir Wrestling started: http://localhost:${PORT}`);
 });
