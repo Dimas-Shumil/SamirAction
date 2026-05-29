@@ -1849,7 +1849,7 @@ html {
 }
 
 .product-page {
-  padding: 110px 0 80px;
+  padding: 110px 0 72px;
   background: #050b12;
   min-height: 100vh;
 }
@@ -1966,7 +1966,7 @@ html {
 }
 .product-info__badge {
   display: inline-flex;
-  margin-bottom: 20px;
+  margin: 20px 0;
   padding: 7px 12px;
   border-radius: 6px;
   background: #0066ff;
@@ -1992,7 +1992,6 @@ html {
 }
 .product-info__description {
   max-width: 520px;
-  margin: 0 0 22px;
   color: rgba(255, 255, 255, 0.66);
   line-height: 1.5;
 }
@@ -2240,7 +2239,6 @@ html {
   display: flex;
   align-items: baseline;
   gap: 14px;
-  margin-top: 28px;
 }
 .product-info__prices span {
   color: rgba(255, 255, 255, 0.42);
