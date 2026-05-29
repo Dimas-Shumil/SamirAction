@@ -805,6 +805,9 @@ ul {
   color: #0b7cff;
   transform: translateX(4px);
 }
+.footer__column a span {
+  color: #0066ff;
+}
 .footer__contacts a,
 .footer__contacts p {
   display: flex;
