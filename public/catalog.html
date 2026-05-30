@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Каталог экипировки — SAMIR WRESTLING</title>
+    <meta
+      name="description"
+      content="Каталог экипировки SAMIR WRESTLING для борьбы, тренировок и соревнований: футболки, рашгарды, трико, костюмы и аксессуары."
+    />
+
+    <link rel="stylesheet" href="/site/css/catalog.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header class="header" id="header">
+      <div class="container header__container">
+        <a href="/" class="header__logo" aria-label="Samir Wrestling">
+          <img src="/site/images/logo.PNG" alt="SAMIR WRESTLING" />
+        </a>
+
+        <nav class="header__nav" aria-label="Основная навигация">
+          <a href="/catalog">Каталог</a>
+          <a href="/delivery" class="is-active">Доставка</a>
+          <a href="/contacts">Контакты</a>
+        </nav>
+
+        <a href="/cart" class="header__cart">
+          <span>Корзина</span>
+          <b>0</b>
+        </a>
+
+        <button
+          class="header__burger"
+          type="button"
+          aria-label="Открыть меню"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="header__mobile">
+        <nav class="header__mobile-nav" aria-label="Мобильная навигация">
+          <a href="/catalog">Каталог</a>
+          <a href="/delivery">Доставка</a>
+          <a href="/contacts">Контакты</a>
+          <a href="/cart">Корзина <span>0</span></a>
+          <a href="tel:+79029410871">Позвонить</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="catalog-hero">
+        <img
+          class="catalog-hero__bg"
+          src="/site/images/catalog/hero-catalog.png"
+          alt=""
+        />
+
+        <div class="catalog-hero__overlay"></div>
+
+        <div class="container">
+          <div class="catalog-hero__content">
+            <div class="catalog-hero__breadcrumbs">
+              <a href="/">Главная</a>
+              <span>/</span>
+              <span>Каталог</span>
+            </div>
+
+            <h1>Каталог</h1>
+
+            <p>
+              Выберите экипировку SAMIR WRESTLING для борьбы, тренировок и
+              соревнований.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="catalog-page">
+        <div class="container">
+          <div class="catalog-tabs" id="catalogTabs">
+            <button
+              class="catalog-tabs__button active"
+              type="button"
+              data-category="all"
+            >
+              Все
+            </button>
+
+            <button
+              class="catalog-tabs__button"
+              type="button"
+              data-category="t-shorts"
+            >
+              Футболки
+            </button>
+
+            <button
+              class="catalog-tabs__button"
+              type="button"
+              data-category="rashguards"
+            >
+              Рашгарды
+            </button>
+
+            <button
+              class="catalog-tabs__button"
+              type="button"
+              data-category="wrestling-singlets"
+            >
+              Трико
+            </button>
+
+            <button
+              class="catalog-tabs__button"
+              type="button"
+              data-category="suits"
+            >
+              Костюмы
+            </button>
+          </div>
+
+          <div class="catalog-layout">
+            <aside class="catalog-filter">
+              <div class="catalog-filter__top">
+                <h2>Фильтры</h2>
+
+                <button type="button" id="catalogReset">Сбросить все</button>
+              </div>
+
+              <div class="catalog-filter__group">
+                <h3>Поиск</h3>
+
+                <input
+                  class="catalog-filter__search"
+                  type="search"
+                  id="catalogSearch"
+                  placeholder="Название товара"
+                />
+              </div>
+
+              <div class="catalog-filter__group">
+                <h3>Категории</h3>
+
+                <label class="catalog-filter__radio">
+                  <input type="radio" name="category" value="all" checked />
+                  <span>Все товары</span>
+                </label>
+
+                <label class="catalog-filter__radio">
+                  <input type="radio" name="category" value="t-shorts" />
+                  <span>Футболки</span>
+                </label>
+
+                <label class="catalog-filter__radio">
+                  <input type="radio" name="category" value="rashguards" />
+                  <span>Рашгарды</span>
+                </label>
+
+                <label class="catalog-filter__radio">
+                  <input
+                    type="radio"
+                    name="category"
+                    value="wrestling-singlets"
+                  />
+                  <span>Трико</span>
+                </label>
+
+                <label class="catalog-filter__radio">
+                  <input type="radio" name="category" value="suits" />
+                  <span>Костюмы</span>
+                </label>
+              </div>
+
+              <div class="catalog-filter__group">
+                <h3>Размер</h3>
+
+                <div class="catalog-filter__sizes" id="catalogSizes">
+                  <button type="button" data-size="S">S</button>
+                  <button type="button" data-size="M">M</button>
+                  <button type="button" data-size="L">L</button>
+                  <button type="button" data-size="XL">XL</button>
+                  <button type="button" data-size="XXL">XXL</button>
+                </div>
+              </div>
+
+              <div class="catalog-filter__group">
+                <h3>Наличие</h3>
+
+                <label class="catalog-filter__checkbox">
+                  <input type="checkbox" id="catalogAvailable" checked />
+                  <span>Только в наличии</span>
+                </label>
+              </div>
+            </aside>
+
+            <div class="catalog-content">
+              <div class="catalog-content__top">
+                <p id="catalogCount">Показано 0 товаров</p>
+
+                <div class="catalog-sort">
+                  <span>Сортировка:</span>
+
+                  <button
+                    class="catalog-sort__button active"
+                    type="button"
+                    data-sort="popular"
+                  >
+                    По популярности
+                  </button>
+
+                  <button
+                    class="catalog-sort__button"
+                    type="button"
+                    data-sort="price-asc"
+                  >
+                    Дешевле
+                  </button>
+
+                  <button
+                    class="catalog-sort__button"
+                    type="button"
+                    data-sort="price-desc"
+                  >
+                    Дороже
+                  </button>
+
+                  <button
+                    class="catalog-sort__button"
+                    type="button"
+                    data-sort="new"
+                  >
+                    Новинки
+                  </button>
+                </div>
+              </div>
+
+              <div class="catalog-grid" id="catalogProducts"></div>
+
+              <div class="catalog-empty" id="catalogEmpty" hidden>
+                <h2>Товары не найдены</h2>
+                <p>Попробуйте изменить фильтры или сбросить параметры.</p>
+                <button type="button" id="catalogEmptyReset">
+                  Сбросить фильтры
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__top">
+          <div class="footer__brand">
+            <a href="/" class="footer__logo">
+              <img src="/site/images/logo.PNG" alt="SAMIR WRESTLING" />
+            </a>
+
+            <p>Экипировка для борьбы<br />и тренировок</p>
+
+            <div class="footer__socials">
+              <a href="#" aria-label="MAX">
+                <img src="/site/icons/MAX.svg" alt="" />
+              </a>
+
+              <a href="#" aria-label="Telegram">
+                <img src="/site/icons/MAX.svg" alt="" />
+              </a>
+
+              <a href="#" aria-label="VK">
+                <img src="/site/icons/MAX.svg" alt="" />
+              </a>
+            </div>
+          </div>
+
+          <nav class="footer__column">
+            <h3>Каталог</h3>
+            <a href="/catalog?category=rashguards">Рашгарды</a>
+            <a href="/catalog?category=wrestling-singlets">Трико</a>
+            <a href="/catalog?category=suits">Костюмы</a>
+            <a href="/catalog?category=shorts">Шорты</a>
+            <a href="/catalog?category=tshirts">Футболки</a>
+          </nav>
+
+          <nav class="footer__column">
+            <h3>Информация</h3>
+            <a href="/delivery">Доставка</a>
+            <a href="/contacts">Контакты</a>
+            <a href="/privacy-policy">Политика конфиденциальности</a>
+            <a href="https://shumdev.ru/"
+              >Разработка и дизайн сайта <span>ShumDev.ru</span></a
+            >
+          </nav>
+
+          <div class="footer__contacts">
+            <h3>Контакты</h3>
+
+            <a href="tel:+79029410871">
+              <img src="/site/icons/phone.png" alt="" />
+              <span>+7 902 941-08-71</span>
+            </a>
+
+            <p>
+              <img src="/site/icons/city.png" alt="" />
+              <span>г. Красноярск</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p>© 2026 SAMIR WRESTLING. Все права защищены.</p>
+
+          <div>
+            <a href="/offer">Публичная оферта</a>
+            <a href="/privacy-policy">Политика конфиденциальности</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="quick-modal" id="quickOrderModal" aria-hidden="true">
+      <div class="quick-modal__overlay" data-quick-close></div>
+
+      <div class="quick-modal__dialog" role="dialog" aria-modal="true">
+        <button class="quick-modal__close" type="button" data-quick-close>
+          ×
+        </button>
+
+        <p class="quick-modal__label">Быстрый заказ</p>
+
+        <h2 class="quick-modal__title">Оставьте контакты</h2>
+
+        <p class="quick-modal__text">
+          Мы свяжемся с вами, уточним размер, наличие и доставку.
+        </p>
+
+        <div class="quick-modal__product" id="quickOrderProduct"></div>
+
+        <form class="quick-modal__form" id="quickOrderForm">
+          <input type="hidden" name="productId" id="quickProductId" />
+          <input type="hidden" name="size" id="quickProductSize" />
+          <input type="hidden" name="type" value="quick" />
+
+          <label>
+            <span>Ваше имя</span>
+            <input
+              type="text"
+              name="name"
+              placeholder="Например, Павел"
+              required
+            />
+          </label>
+
+          <label>
+            <span>Телефон</span>
+            <input
+              type="tel"
+              name="phone"
+              placeholder="+7 ___ ___-__-__"
+              required
+            />
+          </label>
+
+          <button type="submit">Отправить заявку</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="toast" id="toast">
+      <div class="toast__icon">✓</div>
+
+      <div class="toast__content">
+        <strong>Товар добавлен</strong>
+        <span>Товар успешно добавлен в корзину</span>
+      </div>
+    </div>
+
+    <script src="/site/js/catalog.js"></script>
+  </body>
+</html>

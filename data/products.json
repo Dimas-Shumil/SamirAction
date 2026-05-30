@@ -38,7 +38,12 @@
     "bundle": "training-set",
     "color": "Черный / Синий",
     "sizes": ["S", "M", "L", "XL", "XXL"],
-    "images": ["/site/images/products/triko.png"],
+    "images": [
+      "/site/images/products/singletSWalpha1/triko.png",
+      "/site/images/products/singletSWalpha1/back.png",
+      "/site/images/products/singletSWalpha1/tail.png",
+      "/site/images/products/singletSWalpha1/detail.png"
+    ],
     "shortDescription": "Борцовское трико для тренировок и соревнований.",
     "description": "Борцовское трико SAMIR WRESTLING Alpha создано для плотной посадки, свободы движений и уверенной работы на ковре. Подходит для тренировок и соревновательных схваток.",
     "material": "Полиэстер 85%, эластан 15%",
@@ -58,7 +63,12 @@
     "bundle": "training-set",
     "color": "Черный",
     "sizes": ["S", "M", "L", "XL", "XXL"],
-    "images": ["/site/images/products/suit.png"],
+    "images": [
+      "/site/images/products/suitSWalpha1/suit.png",
+      "/site/images/products/suitSWalpha1/back.png",
+      "/site/images/products/suitSWalpha1/tail.png",
+      "/site/images/products/suitSWalpha1/detail.png"
+    ],
     "shortDescription": "Спортивный костюм для тренировок, дороги и повседневной носки.",
     "description": "Спортивный костюм SAMIR WRESTLING Elite выполнен в темном premium combat стиле. Подходит для разминки, поездок на соревнования, тренировок и повседневного использования.",
     "material": "Полиэстер 80%, хлопок 15%, эластан 5%",
@@ -78,7 +88,37 @@
     "bundle": null,
     "color": "Черный / Синий",
     "sizes": ["S", "M", "L", "XL", "XXL"],
-    "images": ["/site/images/products/tshort.png"],
+    "images": [
+      "/site/images/products/rashguardSWalpha1/rashguard.png",
+      "/site/images/products/rashguardSWalpha1/back.png",
+      "/site/images/products/rashguardSWalpha1/tail.png",
+      "/site/images/products/rashguardSWalpha1/detail.png"
+    ],
+    "shortDescription": "Компрессионный рашгард для борьбы, грэпплинга и тренировок.",
+    "description": "Рашгард SAMIR WRESTLING Pro создан для интенсивных нагрузок, плотной посадки и максимальной свободы движений. Хорошо подходит для борьбы, грэпплинга, ММА и функциональных тренировок.",
+    "material": "Полиэстер 85%, эластан 15%",
+    "sku": "SW-RASH-PRO-BL"
+  },
+  {
+    "id": "short-pro",
+    "slug": "short-samir-wrestling-pro",
+    "title": "Шорты SAMIR WRESTLING Pro",
+    "category": "shorts",
+    "categoryTitle": "Шорты",
+    "price": 2190,
+    "oldPrice": 3690,
+    "badge": "Хит",
+    "isPopular": true,
+    "available": true,
+    "bundle": null,
+    "color": "Черный / Синий",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "images": [
+      "/site/images/products/shortsSWalpha1/shorts.png",
+      "/site/images/products/shortsSWalpha1/back.png",
+      "/site/images/products/shortsSWalpha1/tail.png",
+      "/site/images/products/shortsSWalpha1/detail.png"
+    ],
     "shortDescription": "Компрессионный рашгард для борьбы, грэпплинга и тренировок.",
     "description": "Рашгард SAMIR WRESTLING Pro создан для интенсивных нагрузок, плотной посадки и максимальной свободы движений. Хорошо подходит для борьбы, грэпплинга, ММА и функциональных тренировок.",
     "material": "Полиэстер 85%, эластан 15%",
