@@ -167,6 +167,19 @@ function ensureQuickOrderModal() {
           <input type="hidden" name="size" id="quickProductSize" />
           <input type="hidden" name="type" value="quick" />
 
+          <!-- Honeypot: человек не видит, бот может заполнить -->
+          <input
+            class="quick-modal__hidden"
+            type="text"
+            name="website"
+            tabindex="-1"
+            autocomplete="off"
+            aria-hidden="true"
+          />
+
+          <!-- Время открытия формы для антиспам-проверки -->
+          <input type="hidden" name="formStartedAt" id="quickFormStartedAt" />
+
           <label>
             <span>Ваше имя</span>
 
@@ -174,6 +187,9 @@ function ensureQuickOrderModal() {
               type="text"
               name="name"
               placeholder="Например, Павел"
+              autocomplete="name"
+              minlength="2"
+              maxlength="80"
               required
             />
           </label>
@@ -185,8 +201,42 @@ function ensureQuickOrderModal() {
               type="tel"
               name="phone"
               placeholder="+7 ___ ___-__-__"
+              autocomplete="tel"
+              minlength="6"
+              maxlength="40"
               required
             />
+          </label>
+
+          <label class="quick-modal__agreement">
+            <input
+              type="checkbox"
+              name="privacyAccepted"
+              value="yes"
+              required
+            />
+
+            <span>
+              Я соглашаюсь с
+              <a
+                href="/privacy-policy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                политикой конфиденциальности </a
+              >, даю согласие на
+              <a
+                href="/privacy-policy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                обработку персональных данных
+              </a>
+              и подтверждаю, что ознакомлен с
+              <a href="/offer" target="_blank" rel="noopener noreferrer">
+                публичной офертой </a
+              >.
+            </span>
           </label>
 
           <button type="submit">Отправить заявку</button>
@@ -228,6 +278,7 @@ function openQuickOrder(product, size = null) {
     </div>
   `;
 
+  setQuickFormStartedAt();
   modal.classList.add('active');
   modal.setAttribute('aria-hidden', 'false');
   document.body.classList.add('modal-open');
@@ -244,6 +295,14 @@ function closeQuickOrder() {
 
   quickOrderProduct = null;
   quickOrderSize = null;
+}
+
+function setQuickFormStartedAt() {
+  const startedAtInput = document.querySelector('#quickFormStartedAt');
+
+  if (startedAtInput) {
+    startedAtInput.value = String(Date.now());
+  }
 }
 
 // =========================

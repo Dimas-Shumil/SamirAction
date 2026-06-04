@@ -2326,7 +2326,6 @@ ul {
 body.modal-open {
   overflow: hidden;
 }
-
 .quick-modal {
   position: fixed;
   inset: 0;
@@ -2365,6 +2364,9 @@ body.modal-open {
     z-index: 2;
 
     width: min(100%, 520px);
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+
     padding: 34px;
 
     border: 1px solid rgba(0, 102, 255, 0.38);
@@ -2382,6 +2384,23 @@ body.modal-open {
     box-shadow:
       0 30px 90px rgba(0, 0, 0, 0.65),
       0 0 42px rgba(0, 102, 255, 0.16);
+
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 102, 255, 0.7) rgba(255, 255, 255, 0.06);
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 999px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(0, 102, 255, 0.7);
+      border-radius: 999px;
+    }
   }
 
   &__close {
@@ -2399,6 +2418,17 @@ body.modal-open {
     color: $white;
     font-size: 28px;
     cursor: pointer;
+
+    transition:
+      border-color 0.25s ease,
+      background 0.25s ease,
+      transform 0.25s ease;
+
+    &:hover {
+      transform: rotate(90deg);
+      border-color: rgba(0, 102, 255, 0.7);
+      background: rgba(0, 102, 255, 0.16);
+    }
   }
 
   &__label {
@@ -2504,9 +2534,124 @@ body.modal-open {
       }
     }
 
+    // honeypot — есть в DOM, но вообще не виден
+    > .quick-modal__hidden,
+    > input.quick-modal__hidden {
+      position: absolute !important;
+      left: -9999px !important;
+      top: auto !important;
+
+      width: 1px !important;
+      min-width: 1px !important;
+      height: 1px !important;
+      min-height: 1px !important;
+
+      margin: 0 !important;
+      padding: 0 !important;
+      border: 0 !important;
+
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+      appearance: none !important;
+      background: transparent !important;
+      box-shadow: none !important;
+    }
+
+    .quick-modal__agreement {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+
+      margin-top: 2px;
+
+      cursor: pointer;
+
+      input[type='checkbox'] {
+        appearance: none;
+        flex: 0 0 18px;
+        position: relative;
+        width: 18px;
+        min-width: 18px;
+        height: 18px;
+        margin: 3px 0 0;
+        padding: 0;
+
+        border: 1px solid rgba(120, 160, 210, 0.42);
+        border-radius: 5px;
+
+        background: rgba(3, 7, 13, 0.68);
+
+        cursor: pointer;
+
+        transition:
+          border-color 0.25s ease,
+          background 0.25s ease,
+          box-shadow 0.25s ease;
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: 5px;
+          top: 1px;
+
+          width: 5px;
+          height: 10px;
+
+          border-right: 2px solid $white;
+          border-bottom: 2px solid $white;
+
+          opacity: 0;
+          transform: rotate(45deg) scale(0.6);
+
+          transition:
+            opacity 0.2s ease,
+            transform 0.2s ease;
+        }
+
+        &:checked {
+          border-color: rgba(0, 102, 255, 0.95);
+          background: $blue-main;
+          box-shadow: 0 0 14px rgba(0, 102, 255, 0.32);
+        }
+
+        &:checked::after {
+          opacity: 1;
+          transform: rotate(45deg) scale(1);
+        }
+
+        &:focus-visible {
+          outline: 3px solid rgba(0, 102, 255, 0.18);
+          outline-offset: 3px;
+        }
+      }
+
+      span {
+        display: block;
+
+        color: rgba(255, 255, 255, 0.64);
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 1.45;
+      }
+
+      a {
+        color: $blue-soft;
+        font-weight: 800;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+
+        transition: color 0.25s ease;
+
+        &:hover {
+          color: $blue-main;
+        }
+      }
+    }
+
     button {
       min-height: 54px;
-      margin-top: 8px;
+      margin-top: 6px;
 
       border: 1px solid rgba(0, 102, 255, 0.78);
       border-radius: 999px;
@@ -2526,12 +2671,20 @@ body.modal-open {
       transition:
         transform 0.25s ease,
         background 0.25s ease,
-        box-shadow 0.25s ease;
+        box-shadow 0.25s ease,
+        opacity 0.25s ease;
 
       &:hover {
         transform: translateY(-2px);
         background: $blue-soft;
         box-shadow: 0 0 38px rgba(0, 102, 255, 0.72);
+      }
+
+      &:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+        transform: none;
+        box-shadow: none;
       }
     }
   }
@@ -2543,12 +2696,52 @@ body.modal-open {
     padding: 10px;
 
     &__dialog {
+      max-height: calc(100vh - 20px);
       padding: 28px 20px 22px;
       border-radius: 22px;
     }
 
     &__title {
       font-size: 30px;
+    }
+
+    &__text {
+      font-size: 14px;
+    }
+
+    &__product {
+      gap: 12px;
+
+      img {
+        width: 58px;
+        height: 58px;
+      }
+
+      strong {
+        font-size: 14px;
+      }
+
+      span {
+        font-size: 12px;
+      }
+    }
+
+    &__form {
+      .quick-modal__agreement {
+        gap: 10px;
+
+        input[type='checkbox'] {
+          flex: 0 0 16px;
+          width: 16px;
+          min-width: 16px;
+          height: 16px;
+        }
+
+        span {
+          font-size: 11px;
+          line-height: 1.42;
+        }
+      }
     }
   }
 }
@@ -2595,9 +2788,7 @@ body.modal-open {
   opacity: 0;
   visibility: hidden;
 
-  transform:
-    translateY(24px)
-    scale(0.96);
+  transform: translateY(24px) scale(0.96);
 
   transition:
     opacity 0.34s ease,
@@ -2623,9 +2814,7 @@ body.modal-open {
     opacity: 1;
     visibility: visible;
 
-    transform:
-      translateY(0)
-      scale(1);
+    transform: translateY(0) scale(1);
   }
 
   &--success {

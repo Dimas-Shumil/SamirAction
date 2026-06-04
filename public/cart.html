@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/site/css/cart.min.css">
+    <link rel="stylesheet" href="/site/css/cart.min.css" />
     <title>Document</title>
   </head>
   <body>
@@ -149,44 +149,43 @@
 
       <!-- бенифитс -->
 
-    <section class="benefits">
-      <div class="container">
-        <div class="benefits__inner">
-          <div class="benefits__item">
-            <img src="/site/icons/benefits/benefit-setka.png" alt="" />
-            <div>
-              <h3>Премиум материалы</h3>
-              <p>Прочные, дышащие ткани для интенсивных тренировок</p>
+      <section class="benefits">
+        <div class="container">
+          <div class="benefits__inner">
+            <div class="benefits__item">
+              <img src="/site/icons/benefits/benefit-setka.png" alt="" />
+              <div>
+                <h3>Премиум материалы</h3>
+                <p>Прочные, дышащие ткани для интенсивных тренировок</p>
+              </div>
             </div>
-          </div>
 
-          <div class="benefits__item">
-            <img src="/site/icons/benefits/benefit-tshort.png" alt="" />
-            <div>
-              <h3>Удобная посадка</h3>
-              <p>Анатомический крой и свобода движений</p>
+            <div class="benefits__item">
+              <img src="/site/icons/benefits/benefit-tshort.png" alt="" />
+              <div>
+                <h3>Удобная посадка</h3>
+                <p>Анатомический крой и свобода движений</p>
+              </div>
             </div>
-          </div>
 
-          <div class="benefits__item">
-            <img src="/site/icons/benefits/benefir-truck.png" alt="" />
-            <div>
-              <h3>Доставка по России</h3>
-              <p>Быстрая доставка в любой регион удобной ТК</p>
+            <div class="benefits__item">
+              <img src="/site/icons/benefits/benefir-truck.png" alt="" />
+              <div>
+                <h3>Доставка по России</h3>
+                <p>Быстрая доставка в любой регион удобной ТК</p>
+              </div>
             </div>
-          </div>
 
-          <div class="benefits__item">
-            <img src="/site/icons/benefits/benefit-manager.png" alt="" />
-            <div>
-              <h3>Помощь с подбором</h3>
-              <p>Подскажем размер и модель в личном сообщении</p>
+            <div class="benefits__item">
+              <img src="/site/icons/benefits/benefit-manager.png" alt="" />
+              <div>
+                <h3>Помощь с подбором</h3>
+                <p>Подскажем размер и модель в личном сообщении</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
+      </section>
     </main>
 
     <!-- футер -->
@@ -228,7 +227,9 @@
             <a href="/delivery">Доставка</a>
             <a href="/contacts">Контакты</a>
             <a href="/privacy-policy">Политика конфиденциальности</a>
-           <a href="https://shumdev.ru/">Разработка и дизайн сайта <span>ShumDev.ru</span></a>
+            <a href="https://shumdev.ru/"
+              >Разработка и дизайн сайта <span>ShumDev.ru</span></a
+            >
           </nav>
 
           <div class="footer__contacts">
@@ -282,6 +283,19 @@
           <input type="hidden" name="size" id="quickProductSize" />
           <input type="hidden" name="type" value="quick" />
 
+          <!-- Honeypot: человек не видит, бот может заполнить -->
+          <input
+            class="quick-modal__hidden"
+            type="text"
+            name="website"
+            tabindex="-1"
+            autocomplete="off"
+            aria-hidden="true"
+          />
+
+          <!-- Время открытия формы для антиспам-проверки -->
+          <input type="hidden" name="formStartedAt" id="quickFormStartedAt" />
+
           <label>
             <span>Ваше имя</span>
 
@@ -289,18 +303,56 @@
               type="text"
               name="name"
               placeholder="Например, Павел"
+              autocomplete="name"
+              minlength="2"
+              maxlength="80"
               required
             />
           </label>
 
           <label>
             <span>Телефон</span>
+
             <input
               type="tel"
               name="phone"
               placeholder="+7 ___ ___-__-__"
+              autocomplete="tel"
+              minlength="6"
+              maxlength="40"
               required
             />
+          </label>
+
+          <label class="quick-modal__agreement">
+            <input
+              type="checkbox"
+              name="privacyAccepted"
+              value="yes"
+              required
+            />
+
+            <span>
+              Я соглашаюсь с
+              <a
+                href="/privacy-policy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                политикой конфиденциальности </a
+              >, даю согласие на
+              <a
+                href="/privacy-policy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                обработку персональных данных
+              </a>
+              и подтверждаю, что ознакомлен с
+              <a href="/offer" target="_blank" rel="noopener noreferrer">
+                публичной офертой </a
+              >.
+            </span>
           </label>
 
           <button type="submit">Отправить заявку</button>

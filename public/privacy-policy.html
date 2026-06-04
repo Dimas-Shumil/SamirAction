@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Политика конфиденциальности — SAMIR WRESTLING</title>
+    <meta
+      name="description"
+      content="Политика конфиденциальности и обработки персональных данных интернет-магазина SAMIR WRESTLING."
+    />
+
+    <link rel="stylesheet" href="/site/css/main.min.css" />
+
+    <style>
+      .legal-page {
+        min-height: 100vh;
+        padding: 150px 0 90px;
+        background:
+          radial-gradient(circle at 20% 0%, rgba(0, 102, 255, 0.22), transparent 34%),
+          radial-gradient(circle at 80% 20%, rgba(0, 102, 255, 0.12), transparent 30%),
+          #03070d;
+        color: #ffffff;
+      }
+
+      .legal-page__head {
+        max-width: 980px;
+        margin-bottom: 42px;
+      }
+
+      .legal-page__label {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 18px;
+        color: #0066ff;
+        font-size: 13px;
+        font-weight: 900;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .legal-page__label::before {
+        content: '';
+        width: 34px;
+        height: 2px;
+        background: #0066ff;
+      }
+
+      .legal-page h1 {
+        margin: 0 0 18px;
+        font-size: clamp(34px, 6vw, 72px);
+        line-height: 0.95;
+        font-weight: 900;
+        letter-spacing: -0.05em;
+        text-transform: uppercase;
+      }
+
+      .legal-page__intro {
+        max-width: 820px;
+        margin: 0;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 18px;
+        line-height: 1.65;
+      }
+
+      .legal-page__card {
+        padding: clamp(24px, 4vw, 48px);
+        border: 1px solid rgba(0, 102, 255, 0.28);
+        border-radius: 28px;
+        background: rgba(7, 17, 29, 0.86);
+        box-shadow: 0 26px 80px rgba(0, 0, 0, 0.36);
+        backdrop-filter: blur(16px);
+      }
+
+      .legal-page__meta {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        margin-bottom: 34px;
+      }
+
+      .legal-page__meta-item {
+        padding: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 18px;
+        background: rgba(3, 7, 13, 0.52);
+      }
+
+      .legal-page__meta-item span {
+        display: block;
+        margin-bottom: 8px;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .legal-page__meta-item strong {
+        color: #ffffff;
+        font-size: 15px;
+        line-height: 1.45;
+      }
+
+      .legal-section {
+        padding: 30px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .legal-section:first-of-type {
+        border-top: 0;
+        padding-top: 0;
+      }
+
+      .legal-section h2 {
+        margin: 0 0 18px;
+        color: #ffffff;
+        font-size: clamp(22px, 3vw, 34px);
+        line-height: 1.12;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+      }
+
+      .legal-section h3 {
+        margin: 24px 0 12px;
+        color: #ffffff;
+        font-size: 20px;
+        line-height: 1.25;
+        font-weight: 900;
+      }
+
+      .legal-section p {
+        margin: 0 0 14px;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 16px;
+        line-height: 1.72;
+      }
+
+      .legal-section p:last-child {
+        margin-bottom: 0;
+      }
+
+      .legal-section strong {
+        color: #ffffff;
+      }
+
+      .legal-section a {
+        color: #0066ff;
+        text-decoration: none;
+      }
+
+      .legal-section a:hover {
+        text-decoration: underline;
+      }
+
+      .legal-list {
+        display: grid;
+        gap: 12px;
+        margin: 18px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .legal-list li {
+        position: relative;
+        padding-left: 24px;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 16px;
+        line-height: 1.7;
+      }
+
+      .legal-list li::before {
+        content: '';
+        position: absolute;
+        top: 12px;
+        left: 0;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #0066ff;
+        box-shadow: 0 0 18px rgba(0, 102, 255, 0.7);
+      }
+
+      .legal-page__notice {
+        margin-top: 30px;
+        padding: 22px;
+        border: 1px solid rgba(0, 102, 255, 0.38);
+        border-radius: 20px;
+        background: linear-gradient(135deg, rgba(0, 102, 255, 0.18), rgba(0, 102, 255, 0.04));
+      }
+
+      .legal-page__notice p {
+        margin: 0;
+        color: #ffffff;
+        font-weight: 700;
+        line-height: 1.65;
+      }
+
+      @media (max-width: 768px) {
+        .legal-page {
+          padding: 120px 0 60px;
+        }
+
+        .legal-page__meta {
+          grid-template-columns: 1fr;
+        }
+
+        .legal-page__card {
+          border-radius: 22px;
+        }
+
+        .legal-section {
+          padding: 24px 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="header" id="header">
+      <div class="container header__container">
+        <a href="/" class="header__logo" aria-label="Samir Wrestling">
+          <img src="/site/images/logo.PNG" alt="SAMIR WRESTLING" />
+        </a>
+
+        <nav class="header__nav" aria-label="Основная навигация">
+          <a href="/catalog">Каталог</a>
+          <a href="/delivery">Доставка</a>
+          <a href="/contacts">Контакты</a>
+        </nav>
+
+        <a href="/cart" class="header__cart">
+          <span>Корзина</span>
+          <b>0</b>
+        </a>
+
+        <button
+          class="header__burger"
+          type="button"
+          aria-label="Открыть меню"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="header__mobile">
+        <nav class="header__mobile-nav" aria-label="Мобильная навигация">
+          <a href="/catalog">Каталог</a>
+          <a href="/delivery">Доставка</a>
+          <a href="/contacts">Контакты</a>
+          <a href="/cart">Корзина <span>0</span></a>
+          <a href="tel:+79029410871">Позвонить</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="legal-page">
+      <div class="container">
+        <div class="legal-page__head">
+          <div class="legal-page__label">Документы</div>
+
+          <h1>Политика конфиденциальности</h1>
+
+          <p class="legal-page__intro">
+            Настоящая Политика определяет порядок обработки и защиты
+            персональных данных пользователей сайта SAMIR WRESTLING.
+          </p>
+        </div>
+
+        <article class="legal-page__card">
+          <div class="legal-page__meta">
+            <div class="legal-page__meta-item">
+              <span>Оператор</span>
+              <strong>ИП Асадов Самир Адиль Оглы</strong>
+            </div>
+
+            <div class="legal-page__meta-item">
+              <span>ИНН</span>
+              <strong>246411801070</strong>
+            </div>
+
+            <div class="legal-page__meta-item">
+              <span>Сайт</span>
+              <strong>SAMIR WRESTLING</strong>
+            </div>
+
+            <div class="legal-page__meta-item">
+              <span>Cookies</span>
+              <strong>Сайт не использует cookies-файлы</strong>
+            </div>
+          </div>
+
+          <section class="legal-section">
+            <h2>1. Общие положения</h2>
+
+            <p>
+              Настоящая Политика конфиденциальности и обработки персональных
+              данных действует в отношении всей информации, которую сайт
+              <strong>SAMIR WRESTLING</strong> может получить о Пользователе во
+              время использования сайта, оформления заказа, отправки формы
+              обратной связи или быстрого заказа.
+            </p>
+
+            <p>
+              Оператором персональных данных является
+              <strong>ИП Асадов Самир Адиль Оглы</strong>, ИНН
+              <strong>246411801070</strong>, зарегистрированный по адресу:
+              Российская Федерация, Красноярский край, г. Красноярск,
+              ул. Ольховая, д. 4, кв. 157.
+            </p>
+
+            <p>
+              Использование сайта, оформление заказа или отправка формы обратной
+              связи означает согласие Пользователя с настоящей Политикой и
+              условиями обработки его персональных данных.
+            </p>
+          </section>
+
+          <section class="legal-section">
+            <h2>2. Какие данные обрабатываются</h2>
+
+            <p>
+              Оператор может обрабатывать следующие персональные данные
+              Пользователя:
+            </p>
+
+            <ul class="legal-list">
+              <li>имя Пользователя;</li>
+              <li>номер телефона;</li>
+              <li>сообщение, оставленное через форму обратной связи;</li>
+              <li>состав заказа: товар, размер, количество, стоимость;</li>
+              <li>дата и время отправки заявки;</li>
+              <li>
+                техническая информация, необходимая для защиты форм от
+                злоупотреблений: IP-адрес, user-agent браузера, служебная метка
+                времени отправки формы.
+              </li>
+            </ul>
+
+            <p>
+              Оператор не собирает специальные категории персональных данных:
+              сведения о здоровье, расовой или национальной принадлежности,
+              политических взглядах, религиозных убеждениях и иной подобной
+              информации.
+            </p>
+          </section>
+
+          <section class="legal-section">
+            <h2>3. Cookies и локальное хранение</h2>
+
+            <p>
+              <strong>Сайт не использует cookies-файлы.</strong> На сайте не
+              применяются cookie-баннеры, рекламные cookie-файлы и cookie-файлы
+              аналитических сервисов.
+            </p>
+
+            <p>
+              Для корректной работы корзины сайт может использовать
+              <strong>localStorage</strong> браузера Пользователя. В
+              localStorage может временно храниться состав корзины: идентификатор
+              товара, выбранный размер и количество. Эти данные хранятся на
+              устройстве Пользователя и не являются cookies-файлами.
+            </p>
+
+            <p>
+              Пользователь может очистить localStorage самостоятельно через
+              настройки браузера или очистку данных сайта.
+            </p>
+          </section>
+
+          <section class="legal-section">
+            <h2>4. Цели обработки персональных данных</h2>
+
+            <p>Персональные данные обрабатываются для следующих целей:</p>
+
+            <ul class="legal-list">
+              <li>обработка заказов и заявок Пользователя;</li>
+              <li>связь с Пользователем для подтверждения заказа;</li>
+              <li>уточнение размера, наличия товара, доставки и оплаты;</li>
+              <li>подготовка и исполнение договора купли-продажи;</li>
+              <li>организация доставки товара;</li>
+              <li>обработка обращений через форму обратной связи;</li>
+              <li>защита сайта от спама, автоматических отправок и злоупотреблений;</li>
+              <li>ведение внутреннего учёта заявок.</li>
+            </ul>
+          </section>
+
+          <section class="legal-section">
+            <h2>5. Правовые основания обработки</h2>
+
+            <p>
+              Обработка персональных данных осуществляется на основании согласия
+              Пользователя, выраженного при отправке формы на сайте, а также для
+              исполнения договора или предварительных действий по запросу
+              Пользователя.
+            </p>
+
+            <p>
+              Отправляя заявку, Пользователь подтверждает, что действует
+              свободно, своей волей и в своём интересе, а предоставленные данные
+              являются достоверными.
+            </p>
+          </section>
+
+          <section class="legal-section">
+            <h2>6. Порядок обработки персональных данных</h2>
+
+            <p>
+              Оператор осуществляет сбор, запись, систематизацию, накопление,
+              хранение, уточнение, использование, передачу, блокирование,
+              удаление и уничтожение персональных данных в объёме, необходимом
+              для достижения целей обработки.
+            </p>
+
+            <p>
+              Персональные данные обрабатываются с использованием средств
+              автоматизации и без использования таких средств.
+            </p>
+
+            <p>
+              Оператор принимает необходимые организационные и технические меры
+              для защиты персональных данных от неправомерного доступа,
+              уничтожения, изменения, блокирования, копирования, распространения
+              и иных неправомерных действий.
+            </p>
+          </section>
+
+          <section class="legal-section">
+            <h2>7. Передача персональных данных третьим лицам</h2>
+
+            <p>
+              Оператор не передаёт персональные данные третьим лицам без
+              согласия Пользователя, за исключением случаев, предусмотренных
+              законодательством Российской Федерации или необходимых для
+              исполнения заказа.
+            </p>
+
+            <p>
+              Персональные данные могут быть переданы службам доставки,
+              транспортным компаниям, платёжным или иным сервисам только в
+              объёме, необходимом для исполнения заказа Пользователя.
+            </p>
+
+            <p>
+              Оператор также вправе передать данные, если такая передача
+              необходима для выполнения требований закона, защиты прав и законных
+              интересов Оператора или Пользователя.
+            </p>
+          </section>
+
+          <section class="legal-section">
+            <h2>8. Срок хранения персональных данных</h2>
+
+            <p>
+              Персональные данные хранятся не дольше, чем этого требуют цели их
+              обработки, если иной срок хранения не установлен законодательством
+              Российской Федерации.
+            </p>
+
+            <p>
+              Данные, связанные с заказами, могут храниться в течение срока,
+              необходимого для исполнения заказа, обработки возможных возвратов,
+              обменов, претензий и выполнения требований законодательства.
+            </p>
+
+            <p>
+              При достижении целей обработки либо при отзыве согласия
+              Пользователя персональные данные подлежат удалению или
+              обезличиванию, если у Оператора отсутствуют иные законные
+              основания для их хранения.
+            </p>
+          </section>
+
+          <section class="legal-section">
+            <h2>9. Права Пользователя</h2>
+
+            <p>Пользователь имеет право:</p>
+
+            <ul class="legal-list">
+              <li>получать информацию об обработке своих персональных данных;</li>
+              <li>требовать уточнения, блокирования или уничтожения персональных данных;</li>
+              <li>отозвать согласие на обработку персональных данных;</li>
+              <li>направлять обращения Оператору по вопросам обработки данных;</li>
+              <li>
+                защищать свои права и законные интересы в порядке,
+                предусмотренном законодательством Российской Федерации.
+              </li>
+            </ul>
+          </section>
+
+          <section class="legal-section">
+            <h2>10. Отзыв согласия</h2>
+
+            <p>
+              Пользователь вправе отозвать согласие на обработку персональных
+              данных, направив Оператору соответствующее обращение по контактам,
+              указанным в настоящей Политике.
+            </p>
+
+            <p>
+              После получения отзыва Оператор прекращает обработку персональных
+              данных и уничтожает их, если сохранение данных больше не требуется
+              для целей обработки и если отсутствуют иные законные основания для
+              их хранения.
+            </p>
+          </section>
+
+          <section class="legal-section">
+            <h2>11. Согласие на обработку персональных данных</h2>
+
+            <p>
+              Отправляя форму заказа, быстрого заказа или обратной связи,
+              Пользователь даёт согласие Оператору на обработку своих
+              персональных данных на условиях настоящей Политики.
+            </p>
+
+            <p>
+              Согласие предоставляется на обработку следующих данных: имя, номер
+              телефона, сообщение, состав заказа, выбранный размер, количество
+              товаров, дата и время отправки заявки, а также техническая
+              информация, необходимая для защиты формы от злоупотреблений.
+            </p>
+
+            <p>
+              Согласие действует до достижения целей обработки персональных
+              данных либо до момента его отзыва Пользователем.
+            </p>
+          </section>
+
+          <section class="legal-section">
+            <h2>12. Изменение Политики</h2>
+
+            <p>
+              Оператор вправе изменять настоящую Политику. Новая редакция
+              вступает в силу с момента её публикации на сайте, если иное не
+              предусмотрено новой редакцией Политики.
+            </p>
+
+            <p>
+              Актуальная редакция Политики всегда доступна на данной странице.
+            </p>
+          </section>
+
+          <section class="legal-section">
+            <h2>13. Контакты Оператора</h2>
+
+            <ul class="legal-list">
+              <li>Оператор: ИП Асадов Самир Адиль Оглы</li>
+              <li>ИНН: 246411801070</li>
+              <li>
+                Адрес регистрации: Российская Федерация, Красноярский край,
+                г. Красноярск, ул. Ольховая, д. 4, кв. 157
+              </li>
+              <li>Телефон: <a href="tel:+79029410871">+7 902 941-08-71</a></li>
+              <li>
+                Электронная почта:
+                <a href="mailto:pavel.shumilov1001@mail.ru">
+                  pavel.shumilov1001@mail.ru
+                </a>
+              </li>
+            </ul>
+          </section>
+        </article>
+      </div>
+    </main>
+
+    <script src="/site/js/contacts.js" defer></script>
+  </body>
+</html>

@@ -392,6 +392,7 @@ async function openQuickOrder(productId, size = null) {
     </div>
   `;
 
+  setQuickFormStartedAt();
   modal.classList.add('active');
   modal.setAttribute('aria-hidden', 'false');
   document.body.classList.add('modal-open');
@@ -405,6 +406,14 @@ function closeQuickOrder() {
   modal.classList.remove('active');
   modal.setAttribute('aria-hidden', 'true');
   document.body.classList.remove('modal-open');
+}
+
+function setQuickFormStartedAt() {
+  const startedAtInput = document.querySelector('#quickFormStartedAt');
+
+  if (startedAtInput) {
+    startedAtInput.value = String(Date.now());
+  }
 }
 
 document.addEventListener('click', async (event) => {
