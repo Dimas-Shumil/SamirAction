@@ -1736,6 +1736,7 @@ body.modal-open {
 .quick-modal__form .quick-modal__agreement input[type=checkbox] {
   appearance: none;
   flex: 0 0 18px;
+  position: relative;
   width: 18px;
   min-width: 18px;
   height: 18px;

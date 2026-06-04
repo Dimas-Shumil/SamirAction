@@ -337,9 +337,6 @@ function renderProduct(product) {
       }
 
       <div class="product-gallery__main">
-        <button class="product-gallery__zoom" type="button" aria-label="Увеличить фото">
-          ⌕
-        </button>
 
         <img
           id="productMainImage"
