@@ -694,6 +694,16 @@ app.get('/health', (req, res) => {
   });
 });
 
+app.get('/robots.txt', (req, res) => {
+  res.type('text/plain');
+  return res.sendFile(path.join(pagesPath, 'robots.txt'));
+});
+
+app.get('/sitemap.xml', (req, res) => {
+  res.type('application/xml');
+  return res.sendFile(path.join(pagesPath, 'sitemap.xml'));
+});
+
 // Pages
 app.get('/', (req, res) => sendPage(res, 'index.html'));
 app.get('/catalog', (req, res) => sendPage(res, 'catalog.html'));

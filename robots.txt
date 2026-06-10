@@ -1,0 +1,11 @@
+User-agent: *
+
+Allow: /
+Allow: /catalog
+Allow: /product/
+Allow: /delivery
+Allow: /contacts
+
+Disallow: /cart
+
+Sitemap: https://samir-wrestling.ru/sitemap.xml
