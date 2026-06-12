@@ -1651,7 +1651,7 @@ ul {
   object-fit: contain;
   filter: drop-shadow(0 0 14px rgba(0, 102, 255, 0.55));
 }
-.contact-cta__city h3 {
+.contact-cta__city address {
   margin-bottom: 8px;
   color: #ffffff;
   font-size: 28px;
@@ -1958,7 +1958,7 @@ ul {
   color: #0066ff;
 }
 .footer__contacts a,
-.footer__contacts p {
+.footer__contacts .footer__address {
   display: flex;
   align-items: center;
   gap: 14px;
@@ -1967,6 +1967,11 @@ ul {
   font-size: 18px;
   line-height: 1.25;
   font-weight: 700;
+}
+.footer__contacts .footer__address address {
+  margin: 0;
+  font-style: italic;
+  white-space: nowrap;
 }
 .footer__contacts img {
   width: 26px;

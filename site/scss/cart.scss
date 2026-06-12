@@ -1172,6 +1172,15 @@ ul {
       font-weight: 700;
     }
 
+    .footer__address {
+      address {
+        margin: 0;
+
+        font-style: italic;
+        white-space: nowrap;
+      }
+    }
+
     img {
       width: 26px;
       height: 26px;

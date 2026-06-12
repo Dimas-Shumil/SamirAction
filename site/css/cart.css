@@ -819,6 +819,11 @@ ul {
   line-height: 1.25;
   font-weight: 700;
 }
+.footer__contacts .footer__address address {
+  margin: 0;
+  font-style: italic;
+  white-space: nowrap;
+}
 .footer__contacts img {
   width: 26px;
   height: 26px;
