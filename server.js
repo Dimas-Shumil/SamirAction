@@ -713,8 +713,121 @@ app.get('/contacts', (req, res) => sendPage(res, 'contacts.html'));
 app.get('/privacy-policy', (req, res) => sendPage(res, 'privacy-policy.html'));
 app.get('/offer', (req, res) => sendPage(res, 'offer.html'));
 
-app.get('/product/:slug', (req, res) => {
-  return sendPage(res, 'product.html');
+function buildAbsoluteUrl(siteOrigin, urlPath) {
+  if (!urlPath) return `${siteOrigin}/site/images/logo.png`;
+
+  if (/^https?:\/\//i.test(urlPath)) {
+    return urlPath;
+  }
+
+  return `${siteOrigin}${urlPath.startsWith('/') ? '' : '/'}${urlPath}`;
+}
+
+app.get('/product/:slug', async (req, res) => {
+  try {
+    const slug = normalizeString(req.params.slug, 120);
+    const products = await readJsonFile(PRODUCTS_FILE, []);
+    const product = products.find((item) => item.slug === slug);
+
+    if (!product) {
+      return res.status(404).sendFile(path.join(pagesPath, 'product.html'));
+    }
+
+    const siteOrigin = String(
+      process.env.SITE_ORIGIN || 'https://samir-wrestling.ru',
+    ).replace(/\/$/, '');
+
+    const productUrl = `${siteOrigin}/product/${product.slug}`;
+    const productTitle = product.seoTitle || `${product.title} — SAMIR WRESTLING`;
+    const productDescription =
+      product.seoDescription ||
+      product.shortDescription ||
+      product.description ||
+      'Экипировка SAMIR WRESTLING для борьбы, тренировок и соревнований.';
+    const productImage = buildAbsoluteUrl(siteOrigin, product.images?.[0]);
+
+    const productSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      name: product.title,
+      brand: {
+        '@type': 'Brand',
+        name: 'SAMIR WRESTLING',
+      },
+      sku: product.sku || product.id,
+      category: product.categoryTitle || 'Спортивная экипировка для борьбы',
+      description: productDescription,
+      image: productImage,
+      url: productUrl,
+      offers: {
+        '@type': 'Offer',
+        priceCurrency: 'RUB',
+        price: Number(product.price) || 0,
+        availability: product.available
+          ? 'https://schema.org/InStock'
+          : 'https://schema.org/OutOfStock',
+        url: productUrl,
+      },
+    };
+
+    let html = await fs.readFile(path.join(pagesPath, 'product.html'), 'utf8');
+
+    html = html
+      .replace(
+        /<title>[\s\S]*?<\/title>/,
+        `<title>${escapeHtml(productTitle)}</title>`,
+      )
+      .replace(
+        /<meta\s+name="description"\s+content="[^"]*"\s*\/>/,
+        `<meta name="description" content="${escapeHtml(productDescription)}" />`,
+      )
+      .replace(
+        /<meta\s+name="keywords"\s+content="[^"]*"\s*\/>/,
+        `<meta name="keywords" content="${escapeHtml([product.title, product.categoryTitle, 'SAMIR WRESTLING', 'купить экипировку для борьбы'].filter(Boolean).join(', '))}" />`,
+      )
+      .replace(
+        /<link\s+rel="canonical"\s+href="[^"]*"\s*\/>/,
+        `<link rel="canonical" href="${productUrl}" />`,
+      )
+      .replace(
+        /<meta\s+property="og:title"\s+content="[^"]*"\s*\/>/,
+        `<meta property="og:title" content="${escapeHtml(productTitle)}" />`,
+      )
+      .replace(
+        /<meta\s+property="og:description"\s+content="[^"]*"\s*\/>/,
+        `<meta property="og:description" content="${escapeHtml(productDescription)}" />`,
+      )
+      .replace(
+        /<meta\s+property="og:url"\s+content="[^"]*"\s*\/>/,
+        `<meta property="og:url" content="${productUrl}" />`,
+      )
+      .replace(
+        /<meta\s+property="og:image"\s+content="[^"]*"\s*\/>/,
+        `<meta property="og:image" content="${productImage}" />`,
+      )
+      .replace(
+        /<meta\s+name="twitter:title"\s+content="[^"]*"\s*\/>/,
+        `<meta name="twitter:title" content="${escapeHtml(productTitle)}" />`,
+      )
+      .replace(
+        /<meta\s+name="twitter:description"\s+content="[^"]*"\s*\/>/,
+        `<meta name="twitter:description" content="${escapeHtml(productDescription)}" />`,
+      )
+      .replace(
+        /<meta\s+name="twitter:image"\s+content="[^"]*"\s*\/>/,
+        `<meta name="twitter:image" content="${productImage}" />`,
+      )
+      .replace(
+        /<script type="application\/ld\+json">[\s\S]*?<\/script>/,
+        `<script type="application/ld+json">\n${JSON.stringify(productSchema, null, 2)}\n    </script>`,
+      );
+
+    return res.type('html').send(html);
+  } catch (error) {
+    console.error('Product page render error:', error);
+
+    return res.status(500).send('Ошибка загрузки страницы товара');
+  }
 });
 
 // API products

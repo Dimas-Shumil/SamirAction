@@ -123,5 +123,36 @@
     "description": "Рашгард SAMIR WRESTLING Pro создан для интенсивных нагрузок, плотной посадки и максимальной свободы движений. Хорошо подходит для борьбы, грэпплинга, ММА и функциональных тренировок.",
     "material": "Полиэстер 85%, эластан 15%",
     "sku": "SW-RASH-PRO-BL"
+  },
+  {
+    "id": "wrestling-shoes-NikeInflict4White",
+    "slug": "borcovki-samir-wrestling-NikeInflict4White",
+    "title": "Борцовки Nike Inflict 4 001",
+    "seoTitle": "Борцовки SAMIR WRESTLING Nike Inflictt 4 001 — борцовская обувь для тренировок",
+    "seoDescription": "Борцовки SAMIR WRESTLING Inflict4 для борьбы, тренировок и соревнований. Устойчивость, сцепление с ковром, удобная посадка и доставка по России.",
+    "category": "wrestling-shoes",
+    "categoryTitle": "Борцовки",
+    "price": 5990,
+    "oldPrice": 6990,
+    "badge": "Новинка",
+    "isPopular": true,
+    "available": true,
+    "bundle": null,
+    "color": "Черный / Синий",
+    "sizes": ["5", "5.5", "6", "6.5", "7", "7.5", "8", "8.5", "9", "9.5", "10", "10.5","11"],
+    "images": [
+      "/site/images/products/borcovki/NikeInflict4White/NikeInflict4White-main.jpg",
+      "/site/images/products/borcovki/NikeInflict4White/NikeInflict4White-second.jpg",
+      "/site/images/products/borcovki/NikeInflict4White/NikeInflict4White-third.jpg",
+      "/site/images/products/borcovki/NikeInflict4White/NikeInflict4White-forth.jpg",
+      "/site/images/products/borcovki/NikeInflict4White/NikeInflict4White-five.jpg",
+      "/site/images/products/borcovki/NikeInflict4White/NikeInflict4White-six.jpg",
+      "/site/images/products/borcovki/NikeInflict4White/NikeInflict4White-seven.jpg",
+      "/site/images/products/borcovki/NikeInflict4White/NikeInflict4White-table.png"
+    ],
+    "shortDescription": "Борцовки для тренировок, соревнований и уверенной работы на ковре.",
+    "description": "Борцовки SAMIR WRESTLING Alpha созданы для борцов, которым важны сцепление с ковром, устойчивость, легкость и плотная фиксация стопы. Модель подходит для тренировок, сборов и соревновательных схваток.",
+    "material": "Искусственная кожа, текстиль, резиновая подошва",
+    "sku": "HM9674-001"
   }
 ]

@@ -7,6 +7,33 @@ let currentCategory = 'all';
 let currentSize = null;
 let currentSort = 'popular';
 
+const CATEGORY_ALIASES = {
+  tshirts: 't-shorts',
+};
+
+function normalizeCategory(category) {
+  return CATEGORY_ALIASES[category] || category || 'all';
+}
+
+function isCategoryMatch(product, category) {
+  const normalizedCategory = normalizeCategory(category);
+
+  if (normalizedCategory === 'all') {
+    return true;
+  }
+
+  if (normalizedCategory === 'tshirts-shorts') {
+    return ['t-shorts', 'shorts'].includes(product.category);
+  }
+
+  return product.category === normalizedCategory;
+}
+
+function getInitialCategory() {
+  const params = new URLSearchParams(window.location.search);
+  return normalizeCategory(params.get('category') || 'all');
+}
+
 if (header && burger) {
   burger.addEventListener('click', () => {
     const isOpen = burger.classList.toggle('is-open');
@@ -141,8 +168,7 @@ function filterProducts(products) {
   const { search, availableOnly } = getSelectedFilters();
 
   return products.filter((product) => {
-    const categoryMatch =
-      currentCategory === 'all' || product.category === currentCategory;
+    const categoryMatch = isCategoryMatch(product, currentCategory);
 
     const sizeMatch =
       !currentSize || product.sizes?.includes(currentSize);
@@ -583,5 +609,7 @@ document
     }
   });
 
+currentCategory = getInitialCategory();
+syncCategoryControls(currentCategory);
 updateCartCounter();
 renderCatalog();

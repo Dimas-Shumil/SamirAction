@@ -318,7 +318,7 @@ function renderProduct(product) {
   currentProduct = product;
   selectedSize = product.sizes?.[0] || null;
 
-  document.title = `${product.title} — SAMIR WRESTLING`;
+  document.title = product.seoTitle || `${product.title} — SAMIR WRESTLING`;
 
   if (breadcrumb) {
     breadcrumb.textContent = product.title;

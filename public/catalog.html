@@ -7,11 +7,11 @@
     <title>Каталог экипировки для борьбы — SAMIR WRESTLING</title>
     <meta
       name="description"
-      content="Каталог SAMIR WRESTLING: экипировка для борьбы, тренировок и соревнований. Рашгарды, трико, костюмы, футболки и шорты с доставкой по России."
+      content="Каталог SAMIR WRESTLING: экипировка для борьбы, тренировок и соревнований. Борцовки, рашгарды, трико, костюмы, футболки и шорты с доставкой по России."
     />
     <meta
       name="keywords"
-      content="экипировка для борьбы, борцовская экипировка, рашгарды для борьбы, трико для борьбы, костюмы для тренировок, футболки для борьбы, SAMIR WRESTLING"
+      content="экипировка для борьбы, борцовская экипировка, борцовки, рашгарды для борьбы, трико для борьбы, костюмы для тренировок, футболки для борьбы, SAMIR WRESTLING"
     />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#070707" />
@@ -26,7 +26,7 @@
     />
     <meta
       property="og:description"
-      content="Рашгарды, трико, костюмы, футболки и шорты для борьбы и тренировок. Подбор размера и доставка по России."
+      content="Борцовки, рашгарды, трико, костюмы, футболки и шорты для борьбы и тренировок. Подбор размера и доставка по России."
     />
     <meta property="og:url" content="https://samir-wrestling.ru/catalog" />
     <meta
@@ -41,7 +41,7 @@
     />
     <meta
       name="twitter:description"
-      content="Борцовская экипировка SAMIR WRESTLING для тренировок и соревнований с доставкой по России."
+      content="Борцовки и экипировка SAMIR WRESTLING для тренировок и соревнований с доставкой по России."
     />
     <meta
       name="twitter:image"
@@ -63,7 +63,7 @@
         "@context": "https://schema.org",
         "@type": "CollectionPage",
         "name": "Каталог экипировки для борьбы — SAMIR WRESTLING",
-        "description": "Каталог борцовской экипировки SAMIR WRESTLING: рашгарды, трико, костюмы, футболки и шорты для тренировок и соревнований.",
+        "description": "Каталог борцовской экипировки SAMIR WRESTLING: борцовки, рашгарды, трико, костюмы, футболки и шорты для тренировок и соревнований.",
         "url": "https://samir-wrestling.ru/catalog",
         "isPartOf": {
           "@type": "WebSite",
@@ -72,6 +72,7 @@
         },
         "about": [
           { "@type": "Thing", "name": "экипировка для борьбы" },
+          { "@type": "Thing", "name": "борцовки" },
           { "@type": "Thing", "name": "рашгарды" },
           { "@type": "Thing", "name": "борцовское трико" },
           { "@type": "Thing", "name": "спортивные костюмы" }
@@ -83,24 +84,42 @@
             {
               "@type": "ListItem",
               "position": 1,
+              "name": "Борцовки",
+              "url": "https://samir-wrestling.ru/catalog?category=wrestling-shoes"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Футболки и шорты",
+              "url": "https://samir-wrestling.ru/catalog?category=tshirts-shorts"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
               "name": "Футболки",
               "url": "https://samir-wrestling.ru/catalog?category=t-shorts"
             },
             {
               "@type": "ListItem",
-              "position": 2,
+              "position": 4,
+              "name": "Шорты",
+              "url": "https://samir-wrestling.ru/catalog?category=shorts"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
               "name": "Рашгарды",
               "url": "https://samir-wrestling.ru/catalog?category=rashguards"
             },
             {
               "@type": "ListItem",
-              "position": 3,
+              "position": 6,
               "name": "Трико",
               "url": "https://samir-wrestling.ru/catalog?category=wrestling-singlets"
             },
             {
               "@type": "ListItem",
-              "position": 4,
+              "position": 7,
               "name": "Костюмы",
               "url": "https://samir-wrestling.ru/catalog?category=suits"
             }
@@ -172,7 +191,7 @@
 
             <p>
               Выберите экипировку SAMIR WRESTLING для борьбы, тренировок и
-              соревнований: рашгарды, трико, костюмы, футболки и шорты.
+              соревнований: борцовки, рашгарды, трико, костюмы, футболки и шорты.
             </p>
           </div>
         </div>
@@ -187,6 +206,22 @@
               data-category="all"
             >
               Все
+            </button>
+
+            <button
+              class="catalog-tabs__button"
+              type="button"
+              data-category="wrestling-shoes"
+            >
+              Борцовки
+            </button>
+
+            <button
+              class="catalog-tabs__button"
+              type="button"
+              data-category="tshirts-shorts"
+            >
+              Футболки и шорты
             </button>
 
             <button
@@ -220,6 +255,14 @@
             >
               Костюмы
             </button>
+
+            <button
+              class="catalog-tabs__button"
+              type="button"
+              data-category="shorts"
+            >
+              Шорты
+            </button>
           </div>
 
           <div class="catalog-layout">
@@ -250,6 +293,16 @@
                 </label>
 
                 <label class="catalog-filter__radio">
+                  <input type="radio" name="category" value="wrestling-shoes" />
+                  <span>Борцовки</span>
+                </label>
+
+                <label class="catalog-filter__radio">
+                  <input type="radio" name="category" value="tshirts-shorts" />
+                  <span>Футболки и шорты</span>
+                </label>
+
+                <label class="catalog-filter__radio">
                   <input type="radio" name="category" value="t-shorts" />
                   <span>Футболки</span>
                 </label>
@@ -272,6 +325,11 @@
                   <input type="radio" name="category" value="suits" />
                   <span>Костюмы</span>
                 </label>
+
+                <label class="catalog-filter__radio">
+                  <input type="radio" name="category" value="shorts" />
+                  <span>Шорты</span>
+                </label>
               </div>
 
               <div class="catalog-filter__group">
@@ -283,6 +341,13 @@
                   <button type="button" data-size="L">L</button>
                   <button type="button" data-size="XL">XL</button>
                   <button type="button" data-size="XXL">XXL</button>
+                  <button type="button" data-size="39">39</button>
+                  <button type="button" data-size="40">40</button>
+                  <button type="button" data-size="41">41</button>
+                  <button type="button" data-size="42">42</button>
+                  <button type="button" data-size="43">43</button>
+                  <button type="button" data-size="44">44</button>
+                  <button type="button" data-size="45">45</button>
                 </div>
               </div>
 
@@ -379,11 +444,12 @@
 
           <nav class="footer__column">
             <h3>Каталог</h3>
+            <a href="/catalog?category=wrestling-shoes">Борцовки</a>
             <a href="/catalog?category=rashguards">Рашгарды</a>
             <a href="/catalog?category=wrestling-singlets">Трико</a>
             <a href="/catalog?category=suits">Костюмы</a>
             <a href="/catalog?category=shorts">Шорты</a>
-            <a href="/catalog?category=tshirts">Футболки</a>
+            <a href="/catalog?category=t-shorts">Футболки</a>
           </nav>
 
           <nav class="footer__column">
@@ -410,7 +476,7 @@
                 alt="Борцовская экипировка в Красноярске"
               />
 
-              <address>г. Красноярск, <br />ул. Кирова, 43</address>
+              <address>г. Красноярск, ул. Кирова, 43</address>
             </div>
           </div>
         </div>
