@@ -345,6 +345,7 @@ ul {
     object-fit: cover;
     object-position: 72% 0%;
     transform: scale(1.01);
+
   }
 
   &__overlay {
@@ -664,33 +665,34 @@ ul {
 
     &__background {
       object-position: 58% 0%;
+      margin-top: 80px;
     }
 
     &__overlay {
       background:
-        linear-gradient(
-          180deg,
-          rgba(3, 7, 13, 0.58) 0%,
-          rgba(3, 7, 13, 0.52) 34%,
-          rgba(3, 7, 13, 0.98) 100%
-        ),
-        linear-gradient(
-          90deg,
-          rgba(3, 7, 13, 0.96) 0%,
-          rgba(3, 7, 13, 0.62) 56%,
-          rgba(3, 7, 13, 0.28) 100%
-        ),
-        radial-gradient(
-          circle at 68% 28%,
-          rgba(0, 102, 255, 0.24),
-          transparent 34%
-        );
-    }
+      linear-gradient(
+        180deg,
+          rgba(3, 7, 13, 0.18) 0%,
+          rgba(3, 7, 13, 0.22) 34%,
+          rgba(3, 7, 13, 0.38) 100%
+          ),
+          linear-gradient(
+            90deg,
+            rgba(3, 7, 13, 0.96) 0%,
+            rgba(3, 7, 13, 0.62) 56%,
+            rgba(3, 7, 13, 0.28) 100%
+            ),
+            radial-gradient(
+              circle at 68% 28%,
+              rgba(0, 102, 255, 0.24),
+              transparent 34%
+              );
+            }
 
-    &__title {
-      max-width: 410px;
-      margin-bottom: 18px;
-      font-size: clamp(38px, 12vw, 54px);
+            &__title {
+              max-width: 410px;
+              margin-bottom: 18px;
+              font-size: clamp(38px, 12vw, 54px);
       line-height: 0.95;
     }
 
