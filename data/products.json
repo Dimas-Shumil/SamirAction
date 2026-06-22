@@ -443,8 +443,8 @@
     "sku": "HV4207-001"
   },
   {
-    "id": "wrestling-shoes-NikeInflict3BlackWhite",
-    "slug": "borcovki-samir-wrestling-NikeInflictBlackWhite",
+    "id": "wrestling-shoes-NikeInflict3kWhiteBlac",
+    "slug": "borcovki-samir-wrestling-NikeInflictWhiteBlac",
     "title": "Борцовки Nike Inflict 3",
     "seoTitle": "Борцовки SAMIR WRESTLING Nike Inflictt 3 101 — борцовская обувь для тренировок",
     "seoDescription": "Борцовки SAMIR WRESTLING Inflict3 для борьбы, тренировок и соревнований. Устойчивость, сцепление с ковром, удобная посадка и доставка по России.",
@@ -489,7 +489,7 @@
   },
   {
     "id": "wrestling-shoes-NikeInflict3WhiteRed",
-    "slug": "borcovki-samir-wrestling-NikeInflictWhiteRed",
+    "slug": "borcovki-nike-inflict-3-white-red-325256-160",
     "title": "Борцовки Nike Inflict 3",
     "seoTitle": "Борцовки SAMIR WRESTLING Nike Inflictt 3 160 — борцовская обувь для тренировок",
     "seoDescription": "Борцовки SAMIR WRESTLING Inflict3 для борьбы, тренировок и соревнований. Устойчивость, сцепление с ковром, удобная посадка и доставка по России.",
@@ -518,7 +518,7 @@
       "11"
     ],
     "images": [
-      "/site/images/products/borcovki/NikeInflict3WhiteRed/NikeInflict3WhiteRed-1.jpg",
+      "/site/images/products/borcovki/NikeInflict3WhiteRed/NikeInflict3WhiteRed-1.webp",
       "/site/images/products/borcovki/NikeInflict3WhiteRed/NikeInflict3WhiteRed-2.jpg",
       "/site/images/products/borcovki/NikeInflict3WhiteRed/NikeInflict3WhiteRed-3.jpg",
       "/site/images/products/borcovki/NikeInflict3WhiteRed/NikeInflict3WhiteRed-4.jpg",
@@ -621,6 +621,51 @@
     "description": "Борцовки  Nike Inflict 3 - SAMIR WRESTLING - 004 - Черный/Металлик Золотой/ Черный",
     "material": "Искусственная кожа, текстиль, резиновая подошва",
     "sku": "325256-004"
+  },
+  {
+    "id": "wrestling-shoes-NikeInflict3BlackBlackBlack",
+    "slug": "borcovki-samir-wrestling-NikeInflict3BlackBlackBlack",
+    "title": "Борцовки Nike Inflict 3",
+    "seoTitle": "Борцовки SAMIR WRESTLING Nike Inflictt 3 003 — борцовская обувь для тренировок",
+    "seoDescription": "Борцовки SAMIR WRESTLING Inflict3 для борьбы, тренировок и соревнований. Устойчивость, сцепление с ковром, удобная посадка и доставка по России.",
+    "category": "wrestling-shoes",
+    "categoryTitle": "Борцовки",
+    "price": 11990,
+    "oldPrice": 12990,
+    "badge": "Новинка",
+    "isPopular": true,
+    "available": true,
+    "bundle": null,
+    "color": "003 - Черный/Черный/ Черный",
+    "sizes": [
+      "5",
+      "5.5",
+      "6",
+      "6.5",
+      "7",
+      "7.5",
+      "8",
+      "8.5",
+      "9",
+      "9.5",
+      "10",
+      "10.5",
+      "11"
+    ],
+    "images": [
+      "/site/images/products/borcovki/NikeInflict3BlackBlackBlack/NikeInflict3BlackBlackBlack1.jpg",
+      "/site/images/products/borcovki/NikeInflict3BlackBlackBlack/NikeInflict3BlackBlackBlack2.jpg",
+      "/site/images/products/borcovki/NikeInflict3BlackBlackBlack/NikeInflict3BlackBlackBlack3.jpg",
+      "/site/images/products/borcovki/NikeInflict3BlackBlackBlack/NikeInflict3BlackBlackBlack4.jpg",
+      "/site/images/products/borcovki/NikeInflict3BlackBlackBlack/NikeInflict3BlackBlackBlack5.jpg",
+      "/site/images/products/borcovki/NikeInflict3BlackBlackBlack/NikeInflict3BlackBlackBlack6.jpg",
+      "/site/images/products/borcovki/NikeInflict3BlackBlackBlack/NikeInflict3BlackBlackBlack7.jpg",
+
+      "/site/images/products/borcovki/NikeInflict4White/NikeInflict4White-table.png"
+    ],
+    "shortDescription": "Борцовки Nike Inflict 3 для тренировок, соревнований и уверенной работы на ковре.",
+    "description": "Борцовки  Nike Inflict 3 - SAMIR WRESTLING - 003 - Черный/Металлик Золотой/ Черный",
+    "material": "Искусственная кожа, текстиль, резиновая подошва",
+    "sku": "325256-003"
   }
-  
 ]
