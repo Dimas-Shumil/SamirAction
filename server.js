@@ -39,6 +39,9 @@ const transporter = nodemailer.createTransport({
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
   },
+  connectionTimeout: 10000,
+  greetingTimeout: 10000,
+  socketTimeout: 10000,
 });
 
 app.disable('x-powered-by');
@@ -678,6 +681,23 @@ async function sendMail({ subject, text, html }) {
 }
 
 async function verifySmtp() {
+  const requiredEnv = [
+    'SMTP_HOST',
+    'SMTP_PORT',
+    'SMTP_USER',
+    'SMTP_PASS',
+    'TO_EMAIL',
+  ];
+
+  const missingEnv = requiredEnv.filter((key) => !process.env[key]);
+
+  if (missingEnv.length) {
+    console.warn(
+      `SMTP не проверяется: не заполнены переменные ${missingEnv.join(', ')}`,
+    );
+    return;
+  }
+
   try {
     await transporter.verify();
     console.log('SMTP готов к отправке писем');
