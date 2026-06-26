@@ -1,0 +1,896 @@
+[
+  {
+    "id": "1782459931780-20797fae",
+    "type": "quick",
+    "name": "Павел Шумилов",
+    "phone": "+79233906649",
+    "productId": null,
+    "size": null,
+    "items": [],
+    "total": 0,
+    "status": "new",
+    "source": "website",
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-26T07:45:31.780Z"
+  },
+  {
+    "id": "1782453829594-18f6defd",
+    "type": "quick",
+    "name": "Павел Шумилов",
+    "phone": "+79233906649",
+    "productId": "wrestling-singlet-alpha",
+    "size": "S",
+    "items": [
+      {
+        "id": "wrestling-singlet-alpha",
+        "title": "Трико борцовское SAMIR WRESTLING Alpha",
+        "size": "S",
+        "quantity": 1,
+        "price": 3990,
+        "total": 3990
+      }
+    ],
+    "total": 3990,
+    "status": "new",
+    "source": "website",
+    "ip": "::ffff:127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-26T06:03:49.594Z"
+  },
+  {
+    "id": "1782453756723-8e4f7bf3",
+    "type": "quick",
+    "name": "Павел Шумилов",
+    "phone": "+79233906649",
+    "productId": "wrestling-singlet-alpha",
+    "size": "S",
+    "items": [
+      {
+        "id": "wrestling-singlet-alpha",
+        "title": "Трико борцовское SAMIR WRESTLING Alpha",
+        "size": "S",
+        "quantity": 1,
+        "price": 3990,
+        "total": 3990
+      }
+    ],
+    "total": 3990,
+    "status": "new",
+    "source": "website",
+    "ip": "::ffff:127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-26T06:02:36.723Z"
+  },
+  {
+    "id": "1781872078803-ce5e068b",
+    "type": "quick",
+    "name": "Павел Шумилов",
+    "phone": "+79233906649",
+    "productId": "wrestling-shoes-NikeInflict4SkyGrey",
+    "size": "11",
+    "items": [
+      {
+        "id": "wrestling-shoes-NikeInflict4SkyGrey",
+        "title": "Борцовки Nike Inflict 4 SE",
+        "size": "11",
+        "quantity": 1,
+        "price": 11990,
+        "total": 11990
+      }
+    ],
+    "total": 11990,
+    "status": "new",
+    "source": "website",
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-19T12:27:58.803Z"
+  },
+  {
+    "id": "1781871938455-ea281860",
+    "type": "quick",
+    "name": "Павел",
+    "phone": "+79233906649",
+    "productId": "wrestling-shoes-NikeInflict4SkyGrey",
+    "size": "11",
+    "items": [
+      {
+        "id": "wrestling-shoes-NikeInflict4SkyGrey",
+        "title": "Борцовки Nike Inflict 4 SE",
+        "size": "11",
+        "quantity": 1,
+        "price": 11990,
+        "total": 11990
+      }
+    ],
+    "total": 11990,
+    "status": "new",
+    "source": "website",
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-19T12:25:38.460Z"
+  },
+  {
+    "id": "1781844099931-fe545673",
+    "type": "quick",
+    "name": "Павел Шумилов",
+    "phone": "+79233906649",
+    "productId": "wrestling-shoes-NikeInflict4White",
+    "size": "11",
+    "items": [
+      {
+        "id": "wrestling-shoes-NikeInflict4White",
+        "title": "Борцовки Nike Inflict 4 001",
+        "size": "11",
+        "quantity": 1,
+        "price": 5990,
+        "total": 5990
+      }
+    ],
+    "total": 5990,
+    "status": "new",
+    "source": "website",
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-19T04:41:39.931Z"
+  },
+  {
+    "id": "1781842742491-fb0ccf6a",
+    "type": "cart",
+    "name": "Павел Шумилов",
+    "phone": "+79233906649",
+    "productId": null,
+    "size": null,
+    "items": [
+      {
+        "id": "sport-suit-elite",
+        "title": "Костюм спортивный SAMIR WRESTLING Elite",
+        "size": "S",
+        "quantity": 1,
+        "price": 6490,
+        "total": 6490
+      },
+      {
+        "id": "wrestling-singlet-alpha",
+        "title": "Трико борцовское SAMIR WRESTLING Alpha",
+        "size": "XXL",
+        "quantity": 1,
+        "price": 3990,
+        "total": 3990
+      },
+      {
+        "id": "t-short-alpha",
+        "title": "Футболка SAMIR WRESTLING Alpha",
+        "size": "XXL",
+        "quantity": 1,
+        "price": 2990,
+        "total": 2990
+      },
+      {
+        "id": "rashguard-pro",
+        "title": "Рашгард SAMIR WRESTLING Pro",
+        "size": "XL",
+        "quantity": 1,
+        "price": 3190,
+        "total": 3190
+      },
+      {
+        "id": "short-pro",
+        "title": "Шорты SAMIR WRESTLING Pro",
+        "size": "L",
+        "quantity": 1,
+        "price": 2190,
+        "total": 2190
+      }
+    ],
+    "total": 18850,
+    "status": "new",
+    "source": "website",
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-19T04:19:02.491Z"
+  },
+  {
+    "id": "1781842722863-a0637be6",
+    "type": "quick",
+    "name": "Павел Шумилов",
+    "phone": "+79233906649",
+    "productId": "t-short-alpha",
+    "size": "M",
+    "items": [
+      {
+        "id": "t-short-alpha",
+        "title": "Футболка SAMIR WRESTLING Alpha",
+        "size": "M",
+        "quantity": 1,
+        "price": 2990,
+        "total": 2990
+      }
+    ],
+    "total": 2990,
+    "status": "new",
+    "source": "website",
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-19T04:18:42.863Z"
+  },
+  {
+    "id": "1781842684724-d2a98d00",
+    "type": "quick",
+    "name": "Павел Шумилов",
+    "phone": "+79233906649",
+    "productId": null,
+    "size": null,
+    "items": [],
+    "total": 0,
+    "status": "new",
+    "source": "website",
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-19T04:18:04.724Z"
+  },
+  {
+    "id": "1781842572635-f9771986",
+    "type": "quick",
+    "name": "Павел Шумилов",
+    "phone": "+79233906649",
+    "productId": "wrestling-singlet-alpha",
+    "size": "S",
+    "items": [
+      {
+        "id": "wrestling-singlet-alpha",
+        "title": "Трико борцовское SAMIR WRESTLING Alpha",
+        "size": "S",
+        "quantity": 1,
+        "price": 3990,
+        "total": 3990
+      }
+    ],
+    "total": 3990,
+    "status": "new",
+    "source": "website",
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-19T04:16:12.635Z"
+  },
+  {
+    "id": "1781235186407-e6f90d37",
+    "type": "quick",
+    "name": "Павел Шумилов",
+    "phone": "+79233906649",
+    "productId": "t-short-alpha",
+    "size": "S",
+    "items": [
+      {
+        "id": "t-short-alpha",
+        "title": "Футболка SAMIR WRESTLING Alpha",
+        "size": "S",
+        "quantity": 1,
+        "price": 2990,
+        "total": 2990
+      }
+    ],
+    "total": 2990,
+    "status": "new",
+    "source": "website",
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-12T03:33:06.407Z"
+  },
+  {
+    "id": "1781070824551-8aef3819",
+    "type": "cart",
+    "name": "Павел Шумилов",
+    "phone": "+79233906649",
+    "productId": null,
+    "size": null,
+    "items": [
+      {
+        "id": "sport-suit-elite",
+        "title": "Костюм спортивный SAMIR WRESTLING Elite",
+        "size": "S",
+        "quantity": 1,
+        "price": 6490,
+        "total": 6490
+      },
+      {
+        "id": "wrestling-singlet-alpha",
+        "title": "Трико борцовское SAMIR WRESTLING Alpha",
+        "size": "S",
+        "quantity": 1,
+        "price": 3990,
+        "total": 3990
+      },
+      {
+        "id": "rashguard-pro",
+        "title": "Рашгард SAMIR WRESTLING Pro",
+        "size": "XXL",
+        "quantity": 1,
+        "price": 3190,
+        "total": 3190
+      }
+    ],
+    "total": 13670,
+    "status": "new",
+    "source": "website",
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-10T05:53:44.551Z"
+  },
+  {
+    "id": "1781070811818-be103044",
+    "type": "quick",
+    "name": "Павел Шумилов",
+    "phone": "+79233906649",
+    "productId": "t-short-alpha",
+    "size": "S",
+    "items": [
+      {
+        "id": "t-short-alpha",
+        "title": "Футболка SAMIR WRESTLING Alpha",
+        "size": "S",
+        "quantity": 1,
+        "price": 2990,
+        "total": 2990
+      }
+    ],
+    "total": 2990,
+    "status": "new",
+    "source": "website",
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-10T05:53:31.818Z"
+  },
+  {
+    "id": "1781070779574-26724ca4",
+    "type": "cart",
+    "name": "Павел Шумилов",
+    "phone": "+79233906649",
+    "productId": null,
+    "size": null,
+    "items": [
+      {
+        "id": "wrestling-singlet-alpha",
+        "title": "Трико борцовское SAMIR WRESTLING Alpha",
+        "size": "S",
+        "quantity": 1,
+        "price": 3990,
+        "total": 3990
+      },
+      {
+        "id": "rashguard-pro",
+        "title": "Рашгард SAMIR WRESTLING Pro",
+        "size": "S",
+        "quantity": 1,
+        "price": 3190,
+        "total": 3190
+      },
+      {
+        "id": "short-pro",
+        "title": "Шорты SAMIR WRESTLING Pro",
+        "size": "S",
+        "quantity": 1,
+        "price": 2190,
+        "total": 2190
+      },
+      {
+        "id": "t-short-alpha",
+        "title": "Футболка SAMIR WRESTLING Alpha",
+        "size": "S",
+        "quantity": 1,
+        "price": 2990,
+        "total": 2990
+      }
+    ],
+    "total": 12360,
+    "status": "new",
+    "source": "website",
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-10T05:52:59.574Z"
+  },
+  {
+    "id": "1781070706277-ae06a1ba",
+    "type": "quick",
+    "name": "Павел Шумилов",
+    "phone": "+79233906649",
+    "productId": "wrestling-singlet-alpha",
+    "size": "S",
+    "items": [
+      {
+        "id": "wrestling-singlet-alpha",
+        "title": "Трико борцовское SAMIR WRESTLING Alpha",
+        "size": "S",
+        "quantity": 1,
+        "price": 3990,
+        "total": 3990
+      }
+    ],
+    "total": 3990,
+    "status": "new",
+    "source": "website",
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-10T05:51:46.277Z"
+  },
+  {
+    "id": "1781070646083-2263591f",
+    "type": "quick",
+    "name": "Павел Шумилов",
+    "phone": "+79233906649",
+    "productId": "wrestling-singlet-alpha",
+    "size": "S",
+    "items": [
+      {
+        "id": "wrestling-singlet-alpha",
+        "title": "Трико борцовское SAMIR WRESTLING Alpha",
+        "size": "S",
+        "quantity": 1,
+        "price": 3990,
+        "total": 3990
+      }
+    ],
+    "total": 3990,
+    "status": "new",
+    "source": "website",
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-10T05:50:46.083Z"
+  },
+  {
+    "id": "1781070645578-c0c252d6",
+    "type": "quick",
+    "name": "Павел Шумилов",
+    "phone": "+79233906649",
+    "productId": "wrestling-singlet-alpha",
+    "size": "S",
+    "items": [
+      {
+        "id": "wrestling-singlet-alpha",
+        "title": "Трико борцовское SAMIR WRESTLING Alpha",
+        "size": "S",
+        "quantity": 1,
+        "price": 3990,
+        "total": 3990
+      }
+    ],
+    "total": 3990,
+    "status": "new",
+    "source": "website",
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-10T05:50:45.578Z"
+  },
+  {
+    "id": "1781070630721-47d919af",
+    "type": "quick",
+    "name": "Павел Шумилов",
+    "phone": "+79233906649",
+    "productId": "wrestling-singlet-alpha",
+    "size": "S",
+    "items": [
+      {
+        "id": "wrestling-singlet-alpha",
+        "title": "Трико борцовское SAMIR WRESTLING Alpha",
+        "size": "S",
+        "quantity": 1,
+        "price": 3990,
+        "total": 3990
+      }
+    ],
+    "total": 3990,
+    "status": "new",
+    "source": "website",
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-10T05:50:30.721Z"
+  },
+  {
+    "id": "1781070630175-bf9d65d9",
+    "type": "quick",
+    "name": "Павел Шумилов",
+    "phone": "+79233906649",
+    "productId": "wrestling-singlet-alpha",
+    "size": "S",
+    "items": [
+      {
+        "id": "wrestling-singlet-alpha",
+        "title": "Трико борцовское SAMIR WRESTLING Alpha",
+        "size": "S",
+        "quantity": 1,
+        "price": 3990,
+        "total": 3990
+      }
+    ],
+    "total": 3990,
+    "status": "new",
+    "source": "website",
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-10T05:50:30.175Z"
+  },
+  {
+    "id": "1780560752315-471cb4f6",
+    "type": "cart",
+    "name": "Павел Шумилов",
+    "phone": "+79233906649",
+    "productId": null,
+    "size": null,
+    "items": [
+      {
+        "id": "sport-suit-elite",
+        "title": "Костюм спортивный SAMIR WRESTLING Elite",
+        "size": "S",
+        "quantity": 1,
+        "price": 6490,
+        "total": 6490
+      },
+      {
+        "id": "sport-suit-elite",
+        "title": "Костюм спортивный SAMIR WRESTLING Elite",
+        "size": "L",
+        "quantity": 2,
+        "price": 6490,
+        "total": 12980
+      }
+    ],
+    "total": 19470,
+    "status": "new",
+    "source": "website",
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Mobile Safari/537.36",
+    "createdAt": "2026-06-04T08:12:32.315Z"
+  },
+  {
+    "id": "1780560734528-8ab2a2d8",
+    "type": "quick",
+    "name": "Павел Шумилов",
+    "phone": "+79233906649",
+    "productId": "sport-suit-elite",
+    "size": "S",
+    "items": [
+      {
+        "id": "sport-suit-elite",
+        "title": "Костюм спортивный SAMIR WRESTLING Elite",
+        "size": "S",
+        "quantity": 1,
+        "price": 6490,
+        "total": 6490
+      }
+    ],
+    "total": 6490,
+    "status": "new",
+    "source": "website",
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Mobile Safari/537.36",
+    "createdAt": "2026-06-04T08:12:14.528Z"
+  },
+  {
+    "id": "1780554633812-c2b22348",
+    "type": "cart",
+    "name": "Павел Шумилов",
+    "phone": "+79233906649",
+    "productId": null,
+    "size": null,
+    "items": [
+      {
+        "id": "sport-suit-elite",
+        "title": "Костюм спортивный SAMIR WRESTLING Elite",
+        "size": "XXL",
+        "quantity": 1,
+        "price": 6490,
+        "total": 6490
+      }
+    ],
+    "total": 6490,
+    "status": "new",
+    "source": "website",
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-04T06:30:33.812Z"
+  },
+  {
+    "id": "1780554620947-996b7001",
+    "type": "quick",
+    "name": "Павел Шумилов",
+    "phone": "+79233906649",
+    "productId": "wrestling-singlet-alpha",
+    "size": "S",
+    "items": [
+      {
+        "id": "wrestling-singlet-alpha",
+        "title": "Трико борцовское SAMIR WRESTLING Alpha",
+        "size": "S",
+        "quantity": 1,
+        "price": 3990,
+        "total": 3990
+      }
+    ],
+    "total": 3990,
+    "status": "new",
+    "source": "website",
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-04T06:30:20.947Z"
+  },
+  {
+    "id": "1780554614481-c6975208",
+    "type": "quick",
+    "name": "Павел Шумилов",
+    "phone": "+79233906649",
+    "productId": "sport-suit-elite",
+    "size": "S",
+    "items": [
+      {
+        "id": "sport-suit-elite",
+        "title": "Костюм спортивный SAMIR WRESTLING Elite",
+        "size": "S",
+        "quantity": 1,
+        "price": 6490,
+        "total": 6490
+      }
+    ],
+    "total": 6490,
+    "status": "new",
+    "source": "website",
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-04T06:30:14.481Z"
+  },
+  {
+    "id": "1780554602064-f8f04946",
+    "type": "quick",
+    "name": "Павел Шумилов",
+    "phone": "+79233906649",
+    "productId": "rashguard-pro",
+    "size": "S",
+    "items": [
+      {
+        "id": "rashguard-pro",
+        "title": "Рашгард SAMIR WRESTLING Pro",
+        "size": "S",
+        "quantity": 1,
+        "price": 3190,
+        "total": 3190
+      }
+    ],
+    "total": 3190,
+    "status": "new",
+    "source": "website",
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-04T06:30:02.064Z"
+  },
+  {
+    "id": "1780554590658-cb47c417",
+    "type": "cart",
+    "name": "Павел Шумилов",
+    "phone": "+79233906649",
+    "productId": null,
+    "size": null,
+    "items": [
+      {
+        "id": "t-short-alpha",
+        "title": "Футболка SAMIR WRESTLING Alpha",
+        "size": "S",
+        "quantity": 2,
+        "price": 2990,
+        "total": 5980
+      }
+    ],
+    "total": 5980,
+    "status": "new",
+    "source": "website",
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-04T06:29:50.658Z"
+  },
+  {
+    "id": "1780554578308-448b5fb5",
+    "type": "quick",
+    "name": "Павел Шумилов",
+    "phone": "+79233906649",
+    "productId": "wrestling-singlet-alpha",
+    "size": "S",
+    "items": [
+      {
+        "id": "wrestling-singlet-alpha",
+        "title": "Трико борцовское SAMIR WRESTLING Alpha",
+        "size": "S",
+        "quantity": 1,
+        "price": 3990,
+        "total": 3990
+      }
+    ],
+    "total": 3990,
+    "status": "new",
+    "source": "website",
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-04T06:29:38.308Z"
+  },
+  {
+    "id": "1780554544630-0b8d3abc",
+    "type": "cart",
+    "name": "Павел Шумилов",
+    "phone": "+79233906649",
+    "productId": null,
+    "size": null,
+    "items": [
+      {
+        "id": "t-short-alpha",
+        "title": "Футболка SAMIR WRESTLING Alpha",
+        "size": "S",
+        "quantity": 1,
+        "price": 2990,
+        "total": 2990
+      }
+    ],
+    "total": 2990,
+    "status": "new",
+    "source": "website",
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-04T06:29:04.630Z"
+  },
+  {
+    "id": "1780554492907-13de2ea4",
+    "type": "cart",
+    "name": "Павел Шумилов",
+    "phone": "+79233906649",
+    "productId": null,
+    "size": null,
+    "items": [
+      {
+        "id": "t-short-alpha",
+        "title": "Футболка SAMIR WRESTLING Alpha",
+        "size": "S",
+        "quantity": 1,
+        "price": 2990,
+        "total": 2990
+      },
+      {
+        "id": "short-pro",
+        "title": "Шорты SAMIR WRESTLING Pro",
+        "size": "S",
+        "quantity": 1,
+        "price": 2190,
+        "total": 2190
+      }
+    ],
+    "total": 5180,
+    "status": "new",
+    "source": "website",
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-04T06:28:12.907Z"
+  },
+  {
+    "id": "1780554474393-bcac2c15",
+    "type": "cart",
+    "name": "Павел Шумилов",
+    "phone": "+79233906649",
+    "productId": null,
+    "size": null,
+    "items": [
+      {
+        "id": "wrestling-singlet-alpha",
+        "title": "Трико борцовское SAMIR WRESTLING Alpha",
+        "size": "S",
+        "quantity": 1,
+        "price": 3990,
+        "total": 3990
+      },
+      {
+        "id": "wrestling-singlet-alpha",
+        "title": "Трико борцовское SAMIR WRESTLING Alpha",
+        "size": "XXL",
+        "quantity": 1,
+        "price": 3990,
+        "total": 3990
+      }
+    ],
+    "total": 7980,
+    "status": "new",
+    "source": "website",
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-04T06:27:54.393Z"
+  },
+  {
+    "id": "1780554448863-88141b07",
+    "type": "quick",
+    "name": "Павел Шумилов",
+    "phone": "+79233906649",
+    "productId": "wrestling-singlet-alpha",
+    "size": "XXL",
+    "items": [
+      {
+        "id": "wrestling-singlet-alpha",
+        "title": "Трико борцовское SAMIR WRESTLING Alpha",
+        "size": "XXL",
+        "quantity": 1,
+        "price": 3990,
+        "total": 3990
+      }
+    ],
+    "total": 3990,
+    "status": "new",
+    "source": "website",
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-04T06:27:28.863Z"
+  },
+  {
+    "id": "1780554431924-1f0e0813",
+    "type": "quick",
+    "name": "Павел Шумилов",
+    "phone": "+79233906649",
+    "productId": "t-short-alpha",
+    "size": "S",
+    "items": [
+      {
+        "id": "t-short-alpha",
+        "title": "Футболка SAMIR WRESTLING Alpha",
+        "size": "S",
+        "quantity": 1,
+        "price": 2990,
+        "total": 2990
+      }
+    ],
+    "total": 2990,
+    "status": "new",
+    "source": "website",
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-04T06:27:11.924Z"
+  },
+  {
+    "id": "1780551446487-4ecbf01e",
+    "type": "quick",
+    "name": "Павел Шумилов",
+    "phone": "+79233906649",
+    "productId": "t-short-alpha",
+    "size": "S",
+    "items": [
+      {
+        "id": "t-short-alpha",
+        "title": "Футболка SAMIR WRESTLING Alpha",
+        "size": "S",
+        "quantity": 1,
+        "price": 2990,
+        "total": 2990
+      }
+    ],
+    "total": 2990,
+    "status": "new",
+    "source": "website",
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-04T05:37:26.487Z"
+  },
+  {
+    "id": "1780551236346-1128eb86",
+    "type": "cart",
+    "name": "Павел Шумилов",
+    "phone": "+79233906649",
+    "productId": null,
+    "size": null,
+    "items": [
+      {
+        "id": "t-short-alpha",
+        "title": "Футболка SAMIR WRESTLING Alpha",
+        "size": "S",
+        "quantity": 1,
+        "price": 2990,
+        "total": 2990
+      }
+    ],
+    "total": 2990,
+    "status": "new",
+    "source": "website",
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "createdAt": "2026-06-04T05:33:56.346Z"
+  }
+]

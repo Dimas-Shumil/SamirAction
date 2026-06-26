@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Вход в админку — SAMIR WRESTLING</title>
+    <link rel="stylesheet" href="/site/css/admin.min.css" />
+  </head>
+
+  <body class="admin-page admin-page--login">
+    <main class="admin-login">
+      <section class="admin-login__card">
+        <div class="admin-login__brand">SAMIR WRESTLING</div>
+
+        <h1 class="admin-login__title">Вход в админку</h1>
+
+        <p class="admin-login__text">
+          Управление товарами и заявками магазина.
+        </p>
+
+        <form class="admin-login__form" id="adminLoginForm" autocomplete="off">
+          <label class="admin-field">
+            <span class="admin-field__label">Логин</span>
+            <input
+              class="admin-field__input"
+              type="text"
+              name="login"
+              placeholder="Введите логин"
+              required
+            />
+          </label>
+
+          <label class="admin-field">
+            <span class="admin-field__label">Пароль</span>
+            <input
+              class="admin-field__input"
+              type="password"
+              name="password"
+              placeholder="Введите пароль"
+              required
+            />
+          </label>
+
+          <button class="admin-btn admin-btn--primary" type="submit">
+            Войти
+          </button>
+
+          <div class="admin-message" id="adminLoginMessage" aria-live="polite"></div>
+        </form>
+      </section>
+    </main>
+
+    <script src="/site/js/admin-auth.js"></script>
+  </body>
+</html>

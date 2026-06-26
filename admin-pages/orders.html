@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Заявки — SAMIR WRESTLING</title>
+    <link rel="stylesheet" href="/site/css/admin.min.css" />
+  </head>
+
+  <body class="admin-page" data-orders-page>
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar__brand">SAMIR</div>
+
+      <nav class="admin-sidebar__nav">
+        <a class="admin-sidebar__link" href="/admin/products.html">Товары</a>
+        <a class="admin-sidebar__link admin-sidebar__link--active" href="/admin/orders.html">
+          Заявки
+        </a>
+      </nav>
+
+      <button class="admin-sidebar__logout" type="button" data-admin-logout>
+        Выйти
+      </button>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-header">
+        <div>
+          <p class="admin-header__eyebrow">Админ-панель</p>
+          <h1 class="admin-header__title">Заявки</h1>
+        </div>
+      </header>
+
+      <section class="admin-card">
+        <div class="admin-card__top">
+          <div>
+            <h2 class="admin-card__title">Заявки с сайта</h2>
+            <p class="admin-card__text" data-orders-count>
+              Загружаем заявки...
+            </p>
+          </div>
+        </div>
+
+        <div class="admin-loading" data-orders-loading>
+          Загрузка заявок...
+        </div>
+
+        <div class="admin-table-wrap" hidden data-orders-table-wrap>
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Клиент</th>
+                <th>Товары</th>
+                <th>Сумма</th>
+                <th>Дата</th>
+                <th>Статус</th>
+              </tr>
+            </thead>
+
+            <tbody data-orders-table></tbody>
+          </table>
+        </div>
+
+        <div class="admin-empty" hidden data-orders-empty>
+          Заявок пока нет.
+        </div>
+      </section>
+    </main>
+
+    <script src="/site/js/admin.js"></script>
+  </body>
+</html>

@@ -7,9 +7,12 @@ const path = require('path');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const cors = require('cors');
+const session = require('express-session');
 const nodemailer = require('nodemailer');
+const { PrismaClient } = require('@prisma/client');
 
 const app = express();
+const prisma = new PrismaClient();
 
 const PORT = Number(process.env.PORT) || 3000;
 const NODE_ENV = process.env.NODE_ENV || 'development';
@@ -18,9 +21,13 @@ const rootPath = __dirname;
 const pagesPath = path.join(rootPath, 'public');
 const sitePath = path.join(rootPath, 'site');
 const dataPath = path.join(rootPath, 'data');
+const adminPagesPath = path.join(rootPath, 'admin-pages');
 
 const PRODUCTS_FILE = 'products.json';
 const ORDERS_FILE = 'orders.json';
+
+const productsRoutes = require('./routes/products.routes');
+const adminRoutes = require('./routes/admin.routes');
 
 const allowedOrigins = String(
   process.env.ALLOWED_ORIGINS ||
@@ -87,8 +94,9 @@ app.use(
 
       callback(new Error(`CORS blocked: ${origin}`));
     },
-    methods: ['GET', 'POST'],
-    allowedHeaders: ['Content-Type'],
+    methods: ['GET', 'POST', 'PATCH', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'X-CSRF-Token', 'X-Requested-With'],
+    credentials: true,
   }),
 );
 
@@ -103,6 +111,21 @@ app.use(
   express.urlencoded({
     extended: false,
     limit: '50kb',
+  }),
+);
+
+app.use(
+  session({
+    name: 'samirAdmin.sid',
+    secret: process.env.SESSION_SECRET || 'change-this-secret',
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      httpOnly: true,
+      sameSite: 'lax',
+      secure: NODE_ENV === 'production',
+      maxAge: 1000 * 60 * 60 * 12,
+    },
   }),
 );
 
@@ -291,6 +314,57 @@ function appendOrder(order) {
   });
 
   return ordersWriteQueue;
+}
+
+function parseJsonArray(value) {
+  if (Array.isArray(value)) {
+    return value;
+  }
+
+  if (!value) {
+    return [];
+  }
+
+  try {
+    const parsed = JSON.parse(value);
+
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+
+function normalizeDbProduct(product) {
+  if (!product) {
+    return null;
+  }
+
+  const { sizesJson, imagesJson, ...normalizedProduct } = product;
+
+  return {
+    ...normalizedProduct,
+    sizes: parseJsonArray(sizesJson),
+    images: parseJsonArray(imagesJson),
+  };
+}
+
+function getPublicProductWhere(extraWhere = {}) {
+  const now = new Date();
+
+  return {
+    available: true,
+    OR: [
+      {
+        publishAfter: null,
+      },
+      {
+        publishAfter: {
+          lte: now,
+        },
+      },
+    ],
+    ...extraWhere,
+  };
 }
 
 function buildOrderItems(body, products) {
@@ -724,6 +798,47 @@ app.get('/sitemap.xml', (req, res) => {
   return res.sendFile(path.join(pagesPath, 'sitemap.xml'));
 });
 
+function sendAdminPage(res, pageName) {
+  return res.sendFile(path.join(adminPagesPath, pageName));
+}
+
+function requireAdminPage(req, res, next) {
+  if (req.session?.isAdmin) {
+    return next();
+  }
+
+  return res.redirect('/admin/login.html');
+}
+
+// Admin pages
+app.get('/admin', (req, res) => {
+  if (req.session?.isAdmin) {
+    return res.redirect('/admin/products.html');
+  }
+
+  return res.redirect('/admin/login.html');
+});
+
+app.get('/admin/login.html', (req, res) => {
+  if (req.session?.isAdmin) {
+    return res.redirect('/admin/products.html');
+  }
+
+  return sendAdminPage(res, 'login.html');
+});
+
+app.get('/admin/products.html', requireAdminPage, (req, res) => {
+  return sendAdminPage(res, 'products.html');
+});
+
+app.get('/admin/product-edit.html', requireAdminPage, (req, res) => {
+  return sendAdminPage(res, 'product-edit.html');
+});
+
+app.get('/admin/orders.html', requireAdminPage, (req, res) => {
+  return sendAdminPage(res, 'orders.html');
+});
+
 // Pages
 app.get('/', (req, res) => sendPage(res, 'index.html'));
 app.get('/catalog', (req, res) => sendPage(res, 'catalog.html'));
@@ -746,8 +861,14 @@ function buildAbsoluteUrl(siteOrigin, urlPath) {
 app.get('/product/:slug', async (req, res) => {
   try {
     const slug = normalizeString(req.params.slug, 120);
-    const products = await readJsonFile(PRODUCTS_FILE, []);
-    const product = products.find((item) => item.slug === slug);
+
+    const dbProduct = await prisma.product.findFirst({
+      where: getPublicProductWhere({
+        slug,
+      }),
+    });
+
+    const product = normalizeDbProduct(dbProduct);
 
     if (!product) {
       return res.status(404).sendFile(path.join(pagesPath, 'product.html'));
@@ -758,7 +879,8 @@ app.get('/product/:slug', async (req, res) => {
     ).replace(/\/$/, '');
 
     const productUrl = `${siteOrigin}/product/${product.slug}`;
-    const productTitle = product.seoTitle || `${product.title} — SAMIR WRESTLING`;
+    const productTitle =
+      product.seoTitle || `${product.title} — SAMIR WRESTLING`;
     const productDescription =
       product.seoDescription ||
       product.shortDescription ||
@@ -851,41 +973,47 @@ app.get('/product/:slug', async (req, res) => {
 });
 
 // API products
-app.get('/api/products', async (req, res) => {
-  try {
-    const products = await readJsonFile(PRODUCTS_FILE, []);
+// app.get('/api/products', async (req, res) => {
+//   try {
+//     const products = await readJsonFile(PRODUCTS_FILE, []);
 
-    res.json(products);
-  } catch (error) {
-    console.error('Products read error:', error);
+//     res.json(products);
+//   } catch (error) {
+//     console.error('Products read error:', error);
 
-    res.status(500).json({
-      message: 'Не удалось получить товары',
-    });
-  }
-});
+//     res.status(500).json({
+//       message: 'Не удалось получить товары',
+//     });
+//   }
+// });
 
-app.get('/api/products/:slug', async (req, res) => {
-  try {
-    const slug = normalizeString(req.params.slug, 120);
-    const products = await readJsonFile(PRODUCTS_FILE, []);
-    const product = products.find((item) => item.slug === slug);
+// app.get('/api/products/:slug', async (req, res) => {
+//   try {
+//     const slug = normalizeString(req.params.slug, 120);
+//     const products = await readJsonFile(PRODUCTS_FILE, []);
+//     const product = products.find((item) => item.slug === slug);
 
-    if (!product) {
-      return res.status(404).json({
-        message: 'Товар не найден',
-      });
-    }
+//     if (!product) {
+//       return res.status(404).json({
+//         message: 'Товар не найден',
+//       });
+//     }
 
-    res.json(product);
-  } catch (error) {
-    console.error('Product read error:', error);
+//     res.json(product);
+//   } catch (error) {
+//     console.error('Product read error:', error);
 
-    res.status(500).json({
-      message: 'Не удалось получить товар',
-    });
-  }
-});
+//     res.status(500).json({
+//       message: 'Не удалось получить товар',
+//     });
+//   }
+// });
+
+// API products
+app.use('/api/products', productsRoutes);
+
+// API admin
+app.use('/api/admin', adminRoutes);
 
 // API orders
 app.post('/api/orders', formLimiter, async (req, res) => {
@@ -925,7 +1053,11 @@ app.post('/api/orders', formLimiter, async (req, res) => {
       });
     }
 
-    const products = await readJsonFile(PRODUCTS_FILE, []);
+    const dbProducts = await prisma.product.findMany({
+      where: getPublicProductWhere(),
+    });
+
+    const products = dbProducts.map(normalizeDbProduct);
     const items = buildOrderItems(req.body, products);
 
     if (type === 'cart' && !items.length) {
@@ -941,6 +1073,7 @@ app.post('/api/orders', formLimiter, async (req, res) => {
     }
 
     const total = items.reduce((sum, item) => sum + item.total, 0);
+    const createdAt = new Date();
 
     const newOrder = {
       id: createId(),
@@ -955,10 +1088,26 @@ app.post('/api/orders', formLimiter, async (req, res) => {
       source: 'website',
       ip: req.ip,
       userAgent: normalizeString(req.get('user-agent'), 300),
-      createdAt: new Date().toISOString(),
+      createdAt: createdAt.toISOString(),
     };
 
-    await appendOrder(newOrder);
+    await prisma.order.create({
+      data: {
+        id: newOrder.id,
+        type: newOrder.type,
+        name: newOrder.name,
+        phone: newOrder.phone,
+        productId: newOrder.productId,
+        size: newOrder.size,
+        itemsJson: JSON.stringify(newOrder.items),
+        total: newOrder.total,
+        status: newOrder.status,
+        source: newOrder.source,
+        ip: newOrder.ip,
+        userAgent: newOrder.userAgent,
+        createdAt,
+      },
+    });
 
     let mailSent = true;
 

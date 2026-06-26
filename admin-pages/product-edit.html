@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Товар — SAMIR WRESTLING</title>
+    <link rel="stylesheet" href="/site/css/admin.min.css" />
+  </head>
+
+  <body class="admin-page" data-product-edit-page>
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar__brand">SAMIR</div>
+
+      <nav class="admin-sidebar__nav">
+        <a class="admin-sidebar__link admin-sidebar__link--active" href="/admin/products.html">
+          Товары
+        </a>
+        <a class="admin-sidebar__link" href="/admin/orders.html">Заявки</a>
+      </nav>
+
+      <button class="admin-sidebar__logout" type="button" data-admin-logout>
+        Выйти
+      </button>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-header">
+        <div>
+          <p class="admin-header__eyebrow">Админ-панель</p>
+          <h1 class="admin-header__title" data-product-edit-title>
+            Новый товар
+          </h1>
+        </div>
+
+        <a class="admin-btn admin-btn--ghost" href="/admin/products.html">
+          Назад
+        </a>
+      </header>
+
+      <form class="admin-form" id="productForm">
+        <section class="admin-card admin-form__section">
+          <h2 class="admin-card__title">Основное</h2>
+
+          <div class="admin-form__grid">
+            <label class="admin-field">
+              <span class="admin-field__label">Название *</span>
+              <input class="admin-field__input" type="text" name="title" required />
+            </label>
+
+            <label class="admin-field">
+              <span class="admin-field__label">Slug *</span>
+              <input class="admin-field__input" type="text" name="slug" required />
+            </label>
+
+            <label class="admin-field">
+              <span class="admin-field__label">Категория *</span>
+              <input
+                class="admin-field__input"
+                type="text"
+                name="category"
+                value="rashguards"
+                required
+              />
+            </label>
+
+            <label class="admin-field">
+              <span class="admin-field__label">Название категории *</span>
+              <input
+                class="admin-field__input"
+                type="text"
+                name="categoryTitle"
+                value="Рашгарды"
+                required
+              />
+            </label>
+
+            <label class="admin-field">
+              <span class="admin-field__label">Цена *</span>
+              <input class="admin-field__input" type="number" name="price" min="0" required />
+            </label>
+
+            <label class="admin-field">
+              <span class="admin-field__label">Старая цена</span>
+              <input class="admin-field__input" type="number" name="oldPrice" min="0" />
+            </label>
+
+            <label class="admin-field">
+              <span class="admin-field__label">Бейдж</span>
+              <input
+                class="admin-field__input"
+                type="text"
+                name="badge"
+                placeholder="Хит / Новинка / Sale"
+              />
+            </label>
+
+            <label class="admin-field">
+              <span class="admin-field__label">Артикул</span>
+              <input class="admin-field__input" type="text" name="sku" />
+            </label>
+          </div>
+
+          <div class="admin-checks">
+            <label class="admin-check">
+              <input type="checkbox" name="isPopular" />
+              <span>Популярный товар</span>
+            </label>
+
+            <label class="admin-check">
+              <input type="checkbox" name="available" checked />
+              <span>Товар доступен на сайте</span>
+            </label>
+          </div>
+        </section>
+
+        <section class="admin-card admin-form__section">
+          <h2 class="admin-card__title">Фото</h2>
+
+          <label class="admin-field">
+            <span class="admin-field__label">Загрузить фото</span>
+            <input
+              class="admin-field__input"
+              type="file"
+              accept="image/jpeg,image/png,image/webp"
+              multiple
+              data-product-images-input
+            />
+          </label>
+
+          <div class="admin-images" data-product-images-preview></div>
+
+          <label class="admin-field">
+            <span class="admin-field__label">Ссылки на фото</span>
+            <textarea
+              class="admin-field__textarea"
+              name="images"
+              placeholder="/site/images/product.webp, /site/images/product-2.webp"
+            ></textarea>
+          </label>
+        </section>
+
+        <section class="admin-card admin-form__section">
+          <h2 class="admin-card__title">Характеристики</h2>
+
+          <div class="admin-form__grid">
+            <label class="admin-field">
+              <span class="admin-field__label">Размеры</span>
+              <input
+                class="admin-field__input"
+                type="text"
+                name="sizes"
+                placeholder="S, M, L, XL, XXL"
+              />
+            </label>
+
+            <label class="admin-field">
+              <span class="admin-field__label">Цвет</span>
+              <input class="admin-field__input" type="text" name="color" />
+            </label>
+
+            <label class="admin-field">
+              <span class="admin-field__label">Комплект / состав комплекта</span>
+              <input class="admin-field__input" type="text" name="bundle" />
+            </label>
+
+            <label class="admin-field">
+              <span class="admin-field__label">Сортировка</span>
+              <input class="admin-field__input" type="number" name="sortOrder" value="100" />
+            </label>
+          </div>
+
+          <label class="admin-field">
+            <span class="admin-field__label">Материал</span>
+            <textarea class="admin-field__textarea" name="material"></textarea>
+          </label>
+        </section>
+
+        <section class="admin-card admin-form__section">
+          <h2 class="admin-card__title">Описание</h2>
+
+          <label class="admin-field">
+            <span class="admin-field__label">Краткое описание</span>
+            <textarea class="admin-field__textarea" name="shortDescription"></textarea>
+          </label>
+
+          <label class="admin-field">
+            <span class="admin-field__label">Полное описание</span>
+            <textarea class="admin-field__textarea" name="description"></textarea>
+          </label>
+        </section>
+
+        <section class="admin-card admin-form__section">
+          <h2 class="admin-card__title">SEO</h2>
+
+          <label class="admin-field">
+            <span class="admin-field__label">SEO title</span>
+            <input class="admin-field__input" type="text" name="seoTitle" />
+          </label>
+
+          <label class="admin-field">
+            <span class="admin-field__label">SEO description</span>
+            <textarea class="admin-field__textarea" name="seoDescription"></textarea>
+          </label>
+        </section>
+
+        <div class="admin-form__footer">
+          <button class="admin-btn admin-btn--primary" type="submit">
+            Сохранить товар
+          </button>
+
+          <div class="admin-message" data-product-form-message></div>
+        </div>
+      </form>
+    </main>
+
+    <script src="/site/js/admin.js"></script>
+  </body>
+</html>
